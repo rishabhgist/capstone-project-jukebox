@@ -7,7 +7,7 @@ public class PlaylistRepository {
     public void displayAllPlaylist(Connection connection) {
     }
 
-    //display playlist by Id
+    //display playlist by id
     public void displayPlaylistById(Connection connection, int playlistId) {
     }
 

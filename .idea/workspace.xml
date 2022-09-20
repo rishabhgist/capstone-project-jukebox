@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added SongPlayer to utility package">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/utility/SongPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/utility/SongPlayer.java" afterDir="false" />
+    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="rename main class to Catalogue">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,12 +35,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Downloaded.Files.Path.Enabled": "false",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "last_opened_file_path": "C:/Users/Rishabh/IdeaProjects/capstone-project-jukebox/src/main/resources/libraries/lombok.jar",
     "project.structure.last.edited": "Libraries",
@@ -139,7 +141,21 @@
       <option name="project" value="LOCAL" />
       <updated>1663665528350</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added File class object and AudioInputStream object">
+      <created>1663665691713</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1663665691713</updated>
+    </task>
+    <task id="LOCAL-00013" summary="rename main class to Catalogue">
+      <created>1663665746159</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1663665746159</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -164,7 +180,10 @@
     <MESSAGE value="added DatabaseService class" />
     <MESSAGE value="added fields to DatabaseService, added connect method" />
     <MESSAGE value="added SongPlayer to utility package" />
-    <option name="LAST_COMMIT_MESSAGE" value="added SongPlayer to utility package" />
+    <MESSAGE value="added File class object and AudioInputStream obejct" />
+    <MESSAGE value="added File class object and AudioInputStream object" />
+    <MESSAGE value="rename main class to Catalogue" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename main class to Catalogue" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

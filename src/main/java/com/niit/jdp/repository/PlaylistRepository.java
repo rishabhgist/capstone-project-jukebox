@@ -19,4 +19,8 @@ public class PlaylistRepository {
         return false;
     }
 
+    public boolean deletePlaylist(Connection connection, int playlistId) {
+        return false;
+    }
+
 }

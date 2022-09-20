@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added displayAll and displayById method in PlaylistRepository class">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" afterDir="false" />
+    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added displayAllSong, displaySong, addSongToPlaylist methods">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -170,7 +171,28 @@
       <option name="project" value="LOCAL" />
       <updated>1663666591887</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="added create playlist method editPlaylistName method">
+      <created>1663666863642</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1663666863642</updated>
+    </task>
+    <task id="LOCAL-00017" summary="added deletePlaylistMethod">
+      <created>1663666946737</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1663666946737</updated>
+    </task>
+    <task id="LOCAL-00018" summary="added SongRepository class">
+      <created>1663666993825</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1663666993825</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -200,7 +222,12 @@
     <MESSAGE value="rename main class to Catalogue" />
     <MESSAGE value="added PlaylistRepository class" />
     <MESSAGE value="added displayAll and displayById method in PlaylistRepository class" />
-    <option name="LAST_COMMIT_MESSAGE" value="added displayAll and displayById method in PlaylistRepository class" />
+    <MESSAGE value="added create playlist method editPlaylistName method" />
+    <MESSAGE value="added deletePlaylistMethod" />
+    <MESSAGE value="added SongRepository class" />
+    <MESSAGE value="added displayAllSong, displaySong, addSongToPlaylist" />
+    <MESSAGE value="added displayAllSong, displaySong, addSongToPlaylist methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="added displayAllSong, displaySong, addSongToPlaylist methods" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

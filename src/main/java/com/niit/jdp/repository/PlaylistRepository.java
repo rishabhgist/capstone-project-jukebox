@@ -7,13 +7,16 @@ public class PlaylistRepository {
     public void displayAllPlaylist(Connection connection) {
     }
 
-    ;
-
     //display playlist by Id
-    public void displayPlaylistById(Connection connection, int Id) {
+    public void displayPlaylistById(Connection connection, int playlistId) {
     }
 
-    ;
+    public boolean createPlaylist(Connection connection, String playlistName) {
+        return false;
+    }
 
+    public boolean editPlaylistName(Connection connection, String newPlaylistName, int playlistId) {
+        return false;
+    }
 
 }

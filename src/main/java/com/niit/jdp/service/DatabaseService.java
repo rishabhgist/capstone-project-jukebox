@@ -1,4 +1,4 @@
-package com.niit.jdp.services;
+package com.niit.jdp.service;
 
 import java.sql.Connection;
 

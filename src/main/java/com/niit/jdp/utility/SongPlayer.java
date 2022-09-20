@@ -7,5 +7,4 @@ public class SongPlayer {
     File songFile;
     AudioInputStream audioInputStream;
 
-
 }

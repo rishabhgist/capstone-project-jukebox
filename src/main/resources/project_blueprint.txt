@@ -1,0 +1,33 @@
+Project Name - capstone-project-jukebox
+TASK 1
+NOUN - CATALOGUE, SONG
+VERB - SORTING, SEARCHING, ADDING, DISPLAYING
+
+TASK 2 
+NOUN - PLAYLIST
+VERB - ADD SONGS OR ALBUM, EDIT, DISPLAY
+
+TASK 3
+NOUN - SONG PLAYER,
+VERB - PLAY, DISPLAY, SHUFFLE 
+
+CLASSES TO BE CREATED		SERVICES CLASS			    FUNCTIONALITY					    FIELDS
+ - CATALOGUE			    - CATALOGUE SERVICE 	 - SORT, SEARCH, ADD, DISPLAY			- USE GETTERS TO GET DATA FROM MUSIC OBJECT
+ - SONG			 	        - SONG SERVICE		 	 - ADD, EDIT, DISPLAY, DELETE			- NAME, ARTIST, GENRE, LENGTH
+ - PLAYLIST 			    - PLAYLIST SERVICE		 - ADD, EDIT, DISPLAY, DELETE			- NAME, URL
+ - SONG PLAYER							             - PLAY, SHUFFLE
+ 				            - DATABASE SERVICE 		 - CONNECT
+MODELS
+- SONGS
+- PLAYLIST 
+
+UTILITY
+- SONG PLAYER
+
+INTERFACE TO BE CREATED		ABSTRACT METHODS
+ -REPOSITORY 			SORT, ADD, DISPLAY, DELETE, SEARCH
+
+DATABASE - jukebox
+ - TABLES               COLUMNS	                                TYPES
+	- song              id, name, length, artist, genre 		int primary, varchar, double, varchar, varchar, varchar(foreign key)
+	- playlist	        id, name, song_id				        int primary, varchar, varchar

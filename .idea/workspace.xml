@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="fixed field and classes">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/CatalogueRepository.java" afterDir="false" />
+    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added lombok in pom.xml, fix main method missing and added CatalogueRepository java class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Catalogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Catalogue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/services/DatabaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/DatabaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/utility/SongPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/utility/SongPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/libraries/lombok.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Catalogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/CatalogueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/CatalogueRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663672471600</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="added lombok in pom.xml, fix main method missing and added CatalogueRepository java class">
+      <created>1663677389733</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1663677389733</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -280,7 +282,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added song class" />
     <MESSAGE value="added fields to Song class, added lombok external library" />
     <MESSAGE value="added parameterized and no arguments constructor" />
     <MESSAGE value="added Playlist class" />
@@ -305,7 +306,8 @@
     <MESSAGE value="added query to create table song with columns &amp;&amp; create table playlist with columns" />
     <MESSAGE value="added Repository interface" />
     <MESSAGE value="fixed field and classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed field and classes" />
+    <MESSAGE value="added lombok in pom.xml, fix main method missing and added CatalogueRepository java class" />
+    <option name="LAST_COMMIT_MESSAGE" value="added lombok in pom.xml, fix main method missing and added CatalogueRepository java class" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

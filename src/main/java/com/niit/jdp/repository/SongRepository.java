@@ -13,5 +13,12 @@ public class SongRepository {
         return false;
     }
 
- 
+    public boolean addNewSong(Connection connection, String name, String artist, String genre, double duration, String filename) {
+        return false;
+    }
+
+    public boolean addNewSong(Connection connection, int songId) {
+        return false;
+    }
+
 }

@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added lombok in pom.xml, fix main method missing and added CatalogueRepository java class">
+    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added playSong, findSong and sortByAlphabet in CatalogueRepository">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Catalogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/CatalogueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/CatalogueRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Song.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/capstone_project_jukebox.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql/capstone_project_jukebox.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +50,8 @@
     "last_opened_file_path": "C:/Users/Rishabh/IdeaProjects/capstone-project-jukebox/src/main/resources",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -267,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663677389733</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="added playSong, findSong and sortByAlphabet in CatalogueRepository">
+      <created>1663677757304</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1663677757304</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -282,7 +290,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added fields to Song class, added lombok external library" />
     <MESSAGE value="added parameterized and no arguments constructor" />
     <MESSAGE value="added Playlist class" />
     <MESSAGE value="added fields, constructor, toString, equals and hashcode methods in Playlist" />
@@ -307,7 +314,8 @@
     <MESSAGE value="added Repository interface" />
     <MESSAGE value="fixed field and classes" />
     <MESSAGE value="added lombok in pom.xml, fix main method missing and added CatalogueRepository java class" />
-    <option name="LAST_COMMIT_MESSAGE" value="added lombok in pom.xml, fix main method missing and added CatalogueRepository java class" />
+    <MESSAGE value="added playSong, findSong and sortByAlphabet in CatalogueRepository" />
+    <option name="LAST_COMMIT_MESSAGE" value="added playSong, findSong and sortByAlphabet in CatalogueRepository" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

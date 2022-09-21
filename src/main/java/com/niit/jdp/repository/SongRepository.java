@@ -12,13 +12,19 @@ import java.util.List;
 public class SongRepository {
     Song song;
 
+    List<Song> songsList;
+
+    public SongRepository() {
+        this.songsList = new ArrayList<>();
+    }
+
     public List<Song> displayAllSong(Connection connection) {
-        List<Song> songsList = new ArrayList<>();
         String query = "SELECT * FROM `jukebox`.`song`";
         try (Statement statement = connection.createStatement()) {
             ResultSet songResult = statement.executeQuery(query);
             while (songResult.next()) {
                 song = new Song();
+                song.setId(songResult.getInt("song_id"));
                 song.setName(songResult.getString("song_name"));
                 song.setArtist(songResult.getString("song_artist"));
                 song.setAlbum(songResult.getString("song_album"));
@@ -33,10 +39,11 @@ public class SongRepository {
         return songsList;
     }
 
-    public void displaySongId(Connection connection, int playlistId) {
+    public List<Song> displaySongId(Connection connection, int playlistId) {
+        return this.songsList;
     }
 
-    public boolean addSongToLibray(Connection connection, int songId, int playlistId) {
+    public boolean addSongToLibrary(Connection connection, int songId, int playlistId) {
         return false;
     }
 

@@ -8,3 +8,9 @@ create TABLE IF NOT EXISTS `jukebox`.`song`(
    `song_album` VARCHAR(100) NOT NULL,
    `song_url`   VARCHAR(200) NOT NULL,
   PRIMARY KEY (`song_id`));
+
+-- display all song details
+select * from `jukebox`.`song`;
+
+-- display song by ID
+select * from `jukebox`.`song` where(`song_id` = ?);

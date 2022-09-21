@@ -1,6 +1,8 @@
 package com.niit.jdp.service;
 
+import com.niit.jdp.model.Playlist;
 import com.niit.jdp.model.Song;
+import com.niit.jdp.repository.PlaylistRepository;
 import com.niit.jdp.repository.SongRepository;
 
 import java.sql.SQLException;
@@ -11,36 +13,33 @@ public class CatalogueService {
     Song song;
     SongRepository songRepository;
     DatabaseService databaseService;
+    PlaylistRepository playlistRepository;
 
     public CatalogueService() throws SQLException {
         databaseService = new DatabaseService();
         songRepository = new SongRepository();
-    }
-
-    public void displayMusicMenu() {
-        List<Song> songList = songRepository.displayAllSong(databaseService.getConnection());
-        int serial = 1;
-        displayHeader();
-        System.out.println("Sr No. Song Title          Artist          Genre       Duration    Album       ");
-        for (Song fetchSong : songList) {
-            System.out.println(serial + fetchSong.toString());
-            serial++;
-        }
+        playlistRepository = new PlaylistRepository();
     }
 
     public void printDefault() {
         Scanner input = new Scanner(System.in);
-        int choice = 0;
+        int choice;
         do {
             displayHeader();
-            System.out.println("1.View Songs List\n2.View Playlists\n3.Sort song by alphabet\n4.Find a song");
+            System.out.println("1.View Songs List\n2.View Playlists\n3.Sort song by alphabet\n4.Find a song\n5.Exit");
             choice = input.nextInt();
             switch (choice) {
                 case 1:
-                    displayMusicMenu();
+                    List<Song> songList = songRepository.displayAllSong(databaseService.getConnection());
+                    displayHeader();
+                    System.out.println("Sr No. Song Title          Artist          Genre       Duration    Album       ");
+                    songList.stream().map(Song::toString).forEach(System.out::println);
                     break;
                 case 2:
-                    break;
+                    List<Playlist> playlistLists = playlistRepository.displayAllPlaylist(databaseService.getConnection());
+                    displayHeader();
+                    System.out.println("Sr No.     Playlist  ");
+                    playlistLists.stream().map(Playlist::toString).forEach(System.out::println);
                 case 3:
                     sortByAlphabet();
                     break;
@@ -48,7 +47,7 @@ public class CatalogueService {
                     findSong();
                     break;
                 case 5:
-                    System.out.println("Enter 5 to exit");
+                    System.out.println("Thanks for using");
                     break;
                 default:
                     System.err.println("Invalid choice");

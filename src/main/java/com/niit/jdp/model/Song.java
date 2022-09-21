@@ -3,7 +3,7 @@ package com.niit.jdp.model;
 import java.util.Objects;
 
 public class Song {
-
+    private int id;
     private String name;
     private String genre;
     private double length;
@@ -16,13 +16,22 @@ public class Song {
     public Song() {
     }
 
-    public Song(String name, String genre, double length, String artist, String album, String path) {
+    public Song(int id, String name, String genre, double length, String artist, String album, String path) {
+        this.id = id;
         this.name = name;
         this.genre = genre;
         this.length = length;
         this.artist = artist;
         this.album = album;
         this.path = path;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -75,7 +84,7 @@ public class Song {
 
     @Override
     public String toString() {
-        return "      " + name + "        " + artist + "    " + genre + "         " + length + "        " + album;
+        return id + "      " + name + "        " + artist + "    " + genre + "         " + length + "        " + album;
     }
 
     @Override

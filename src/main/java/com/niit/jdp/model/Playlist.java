@@ -45,14 +45,13 @@ public class Playlist {
 
     @Override
     public String toString() {
-        return "Playlist{" + "id=" + id + ", name='" + name + '\'' + ", songList=" + songList + '}';
+        return id + "      " + name + "       " + songList.size();
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Playlist)) return false;
-        Playlist playlist = (Playlist) o;
+        if (!(o instanceof Playlist playlist)) return false;
         return id == playlist.id && Objects.equals(name, playlist.name) && Objects.equals(songList, playlist.songList);
     }
 

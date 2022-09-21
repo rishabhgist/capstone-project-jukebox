@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SongRepository {
+public class SongRepository implements Repository<Song> {
     Song song;
 
     List<Song> songsList;
@@ -18,7 +18,15 @@ public class SongRepository {
         this.songsList = new ArrayList<>();
     }
 
-    public List<Song> displayAllSong(Connection connection) {
+
+    /**
+     * This function returns a list of all the objects in the database.
+     *
+     * @param connection The connection to the database.
+     * @return A list of objects of type Song.
+     */
+    @Override
+    public List<Song> displayAll(Connection connection) {
         String query = "SELECT * FROM `jukebox`.`song`";
         try (Statement statement = connection.createStatement()) {
             ResultSet songResult = statement.executeQuery(query);
@@ -39,20 +47,39 @@ public class SongRepository {
         return songsList;
     }
 
-    public List<Song> displaySongId(Connection connection, int playlistId) {
-        return this.songsList;
+    /**
+     * Given a connection to a database, return the object with the given id.
+     *
+     * @param connection The connection to the database.
+     * @param id         The id of the display you want to get.
+     * @return A single row from the table.
+     */
+    @Override
+    public Song displayById(Connection connection, int id) {
+        return null;
     }
 
-    public boolean addSongToLibrary(Connection connection, int songId, int playlistId) {
+    /**
+     * This function adds a new object to the database
+     *
+     * @param connection The connection to the database.
+     * @param song       The object to be added to the database.
+     * @return A boolean value.
+     */
+    @Override
+    public boolean add(Connection connection, Song song) {
         return false;
     }
 
-    public boolean addNewSong(Connection connection, String name, String artist, String genre, double duration, String filename) {
+    /**
+     * Delete the row with the given id from the table.
+     *
+     * @param connection The connection to the database.
+     * @param id         The id of the record to delete.
+     * @return A boolean value.
+     */
+    @Override
+    public boolean delete(Connection connection, int id) {
         return false;
     }
-
-    public boolean addNewSong(Connection connection, int songId) {
-        return false;
-    }
-
 }

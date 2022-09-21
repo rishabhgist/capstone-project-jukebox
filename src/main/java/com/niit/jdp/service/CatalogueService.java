@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CatalogueService {
-    Song song;
     SongRepository songRepository;
     DatabaseService databaseService;
     PlaylistRepository playlistRepository;

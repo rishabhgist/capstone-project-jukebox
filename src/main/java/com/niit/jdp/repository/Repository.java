@@ -23,13 +23,13 @@ public interface Repository<T> {
     T displayById(Connection connection, int id);
 
     /**
-     * Adds the given object to the database and returns the object with the generated id.
+     * This function adds a new object to the database
      *
      * @param connection The connection to the database.
      * @param t          The object to be added to the database.
-     * @return The object that was added to the database.
+     * @return A boolean value.
      */
-    T add(Connection connection, T t);
+    boolean add(Connection connection, T t);
 
 
     /**

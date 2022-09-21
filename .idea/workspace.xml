@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added no argument constructor to call connect method">
+    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added displayCatalogue method in CatalogueRepository">
       <change afterPath="$PROJECT_DIR$/src/main/resources/songs/happy-travel.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/songs/lie-2-you-ft-dylan-emmet.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/songs/night-sky-ft-julia-mihevc.wav" afterDir="false" />
@@ -13,14 +13,9 @@
       <change afterPath="$PROJECT_DIR$/src/main/resources/songs/trendy-summer.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/songs/tropical-summer.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/songs/whip.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/e/2e972e9c43469b67c52d4ebb1ef4baf6e570e05a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/CatalogueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/CatalogueRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/DatabaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/DatabaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project_blueprint.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project_blueprint.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/capstone_project_jukebox.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql/capstone_project_jukebox.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +71,26 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Rishabh\IdeaProjects\capstone-project-jukebox\src\main\resources\sql" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.niit.jdp.Main" />
+      <module name="capstone-project-jukebox" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niit.jdp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -317,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663748449783</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="added displayCatalogue method in CatalogueRepository">
+      <created>1663749752366</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1663749752366</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -366,7 +388,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added fields to DatabaseService, added connect method" />
     <MESSAGE value="added SongPlayer to utility package" />
     <MESSAGE value="added File class object and AudioInputStream obejct" />
     <MESSAGE value="added File class object and AudioInputStream object" />
@@ -391,7 +412,8 @@
     <MESSAGE value="fixed missing field in Song" />
     <MESSAGE value="added mysql connector dependency and logic in connect method" />
     <MESSAGE value="added no argument constructor to call connect method" />
-    <option name="LAST_COMMIT_MESSAGE" value="added no argument constructor to call connect method" />
+    <MESSAGE value="added displayCatalogue method in CatalogueRepository" />
+    <option name="LAST_COMMIT_MESSAGE" value="added displayCatalogue method in CatalogueRepository" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

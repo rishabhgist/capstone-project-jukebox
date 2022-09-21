@@ -25,9 +25,9 @@ UTILITY
 - SONG PLAYER
 
 INTERFACE TO BE CREATED		ABSTRACT METHODS
- -REPOSITORY 			SORT, ADD, DISPLAY, DELETE, SEARCH
+ -REPOSITORY 			    SORT, ADD, DISPLAY, DELETE, SEARCH
 
 DATABASE - jukebox
  - TABLES               COLUMNS	                                TYPES
-	- song              id, name, length, artist, genre 		int primary, varchar, double, varchar, varchar, varchar(foreign key)
+	- song              id, name, length, artist, genre, url	int primary, varchar, double, varchar, varchar, varchar, varchar
 	- playlist	        id, name, song_id				        int primary, varchar, varchar

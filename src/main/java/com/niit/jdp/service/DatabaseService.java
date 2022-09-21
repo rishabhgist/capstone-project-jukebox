@@ -8,7 +8,7 @@ public class DatabaseService {
     private static final String URL = "jdbc:mysql://127.0.0.1:3307/jukebox";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root";
-    Connection connection;
+    private Connection connection;
 
     public DatabaseService() throws SQLException {
         connect();

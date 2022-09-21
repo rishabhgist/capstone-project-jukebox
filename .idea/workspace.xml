@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added Repository implementation for Song and Playlist">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongComparator.java" afterDir="false" />
+    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added logic in sortByAlphabet and displayByName">
       <change afterPath="$PROJECT_DIR$/src/main/resources/songs/happy-travel.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/songs/lie-2-you-ft-dylan-emmet.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/songs/night-sky-ft-julia-mihevc.wav" afterDir="false" />
@@ -14,13 +13,16 @@
       <change afterPath="$PROJECT_DIR$/src/main/resources/songs/trendy-summer.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/songs/tropical-summer.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/songs/whip.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sql/capstone_project_jukebox_playlist.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Song.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongComparator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/CatalogueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/CatalogueService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/capestone_project_jukebox_song.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql/capestone_project_jukebox_song.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/capestone_project_jukebox_song.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql/capstone_project_jukebox_song.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/capstone_project_jukebox.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql/capstone_project_jukebox.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +42,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2F1ekGjqbfhYq6nkkd5NbH8QzSb" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -381,7 +386,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663767973060</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="added logic in sortByAlphabet and displayByName">
+      <created>1663781155487</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1663781155487</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -411,7 +423,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added create playlist method editPlaylistName method" />
     <MESSAGE value="added deletePlaylistMethod" />
     <MESSAGE value="added SongRepository class" />
     <MESSAGE value="added displayAllSong, displaySong, addSongToPlaylist" />
@@ -436,7 +447,8 @@
     <MESSAGE value="fixed field name in song, playlist added logic in to display All song in SongRepository" />
     <MESSAGE value="added Repository interface abstract displayAll, displayById, add and delete methods" />
     <MESSAGE value="added Repository implementation for Song and Playlist" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Repository implementation for Song and Playlist" />
+    <MESSAGE value="added logic in sortByAlphabet and displayByName" />
+    <option name="LAST_COMMIT_MESSAGE" value="added logic in sortByAlphabet and displayByName" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

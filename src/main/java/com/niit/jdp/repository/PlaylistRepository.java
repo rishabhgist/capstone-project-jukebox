@@ -1,13 +1,13 @@
 package com.niit.jdp.repository;
 
 import com.niit.jdp.model.Playlist;
+import com.niit.jdp.model.Song;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.List;
-import java.util.stream.Stream;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class PlaylistRepository implements Repository<Playlist> {
     Playlist playlist;
@@ -57,7 +57,19 @@ public class PlaylistRepository implements Repository<Playlist> {
      */
     @Override
     public boolean add(Connection connection, Playlist playlist) {
-        return false;
+        Map<Song, Integer> collect = playlist.getSongList().stream().collect(Collectors.toMap(Function.identity(), Song::getId));
+        String listToStr = collect.values().toString();
+        String insertQuery = "insert into `jukebox`.`playlist` (`playlist_id`, `playlist_name`, `playlist_data`) VALUES (?, ?, ?)";
+        int numberOfRowsAffected;
+        try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
+            preparedStatement.setInt(1, playlist.getId());
+            preparedStatement.setString(2, playlist.getName());
+            preparedStatement.setString(3, listToStr);
+            numberOfRowsAffected = preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return numberOfRowsAffected > 0;
     }
 
     /**
@@ -79,10 +91,8 @@ public class PlaylistRepository implements Repository<Playlist> {
      * @return A list of objects that are sorted by alphabetical order.
      */
     @Override
-    public List<Playlist> sortByAlphabet(List<Playlist> playlists, SongComparator songComparator) {
-        Stream<Playlist> sorted = playlists.stream().sorted((name1, name2) -> String.CASE_INSENSITIVE_ORDER.compare(name1.getName(), name2.getName()));
-        sorted.forEach(System.out::println);
-        return playlists;
+    public List<Playlist> sortByAlphabet(List<Playlist> playlists) {
+        return playlists.stream().sorted((name1, name2) -> String.CASE_INSENSITIVE_ORDER.compare(name1.getName(), name2.getName())).toList();
     }
 
     public boolean editPlaylistName(Connection connection, String newPlaylistName, int playlistId) {

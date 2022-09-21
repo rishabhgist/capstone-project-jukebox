@@ -47,5 +47,5 @@ public interface Repository<T> {
      * @param tList The list of objects to be sorted.
      * @return A list of objects that are sorted by alphabetical order.
      */
-    List<T> sortByAlphabet(List<T> tList, SongComparator songComparator);
+    List<T> sortByAlphabet(List<T> tList);
 }

@@ -56,6 +56,7 @@ public class SongRepository implements Repository<Song> {
         try (PreparedStatement readValues = connection.prepareStatement(query)) {
             readValues.setString(1, name + "%");
             ResultSet songResult = readValues.executeQuery();
+            //noinspection LoopStatementThatDoesntLoop
             while (songResult.next()) {
                 song = new Song();
                 song.setId(songResult.getInt("song_id"));
@@ -105,7 +106,7 @@ public class SongRepository implements Repository<Song> {
      * @return A list of objects that are sorted by alphabetical order.
      */
     @Override
-    public List<Song> sortByAlphabet(List<Song> songList, SongComparator songComparator) {
-        return songList.stream().sorted(songComparator).toList();
+    public List<Song> sortByAlphabet(List<Song> songList) {
+        return songList.stream().sorted((name1, name2) -> String.CASE_INSENSITIVE_ORDER.compare(name1.getName(), name2.getName())).toList();
     }
 }

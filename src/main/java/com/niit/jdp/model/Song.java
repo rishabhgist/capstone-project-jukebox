@@ -11,14 +11,17 @@ public class Song {
 
     private String songAlbum;
 
+    private String songUrl;
+
     public Song() {
     }
 
-    public Song(String songName, String songGenre, double songLength, String songArtist, String songAlbum) {
+    public Song(String songName, String songGenre, double songLength, String songArtist, String songAlbum, String songUrl) {
         this.songName = songName;
         this.songGenre = songGenre;
         this.songLength = songLength;
         this.songArtist = songArtist;
         this.songAlbum = songAlbum;
+        this.songUrl = songUrl;
     }
 }

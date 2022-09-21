@@ -1,0 +1,11 @@
+
+£
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(½Ğñ€ûÿÿÿÿ8íñçÔµ0
+£
+java:S1186	"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(å§òúÿÿÿÿ8îñçÔµ0
+m
+java:S1172"KRemove these unused method parameters "connection", "songId", "playlistId".(ïŒ¾Ùüÿÿÿÿ8®ŒèÔµ0
+ƒ
+java:S1172"fRemove these unused method parameters "connection", "name", "artist", "genre", "duration", "filename".(‹ÕîÕ8±ŒèÔµ0
+Z
+java:S1172"=Remove these unused method parameters "connection", "songId".(óÉÊ‹8´ŒèÔµ0

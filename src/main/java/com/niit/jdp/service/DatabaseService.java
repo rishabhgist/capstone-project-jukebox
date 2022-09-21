@@ -10,12 +10,16 @@ public class DatabaseService {
     private static final String PASSWORD = "root";
     Connection connection;
 
+    public DatabaseService() throws SQLException {
+        connect();
+    }
+
     public Connection getConnection() {
         return connection;
     }
 
-    public Connection connect() throws SQLException {
+    public boolean connect() throws SQLException {
         connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-        return this.connection;
+        return connection != null;
     }
 }

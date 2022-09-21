@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="fixed missing field in Song">
+    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added mysql connector dependency and logic in connect method">
       <change afterPath="$PROJECT_DIR$/src/main/resources/songs/happy-travel.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/songs/lie-2-you-ft-dylan-emmet.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/songs/night-sky-ft-julia-mihevc.wav" afterDir="false" />
@@ -297,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663744274873</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="added mysql connector dependency and logic in connect method">
+      <created>1663745190832</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1663745190832</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -339,7 +346,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added fields, constructor, toString, equals and hashcode methods in Playlist" />
     <MESSAGE value="added DatabaseService class" />
     <MESSAGE value="added fields to DatabaseService, added connect method" />
     <MESSAGE value="added SongPlayer to utility package" />
@@ -364,7 +370,8 @@
     <MESSAGE value="added playSong, findSong and sortByAlphabet in CatalogueRepository" />
     <MESSAGE value="fixed query" />
     <MESSAGE value="fixed missing field in Song" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed missing field in Song" />
+    <MESSAGE value="added mysql connector dependency and logic in connect method" />
+    <option name="LAST_COMMIT_MESSAGE" value="added mysql connector dependency and logic in connect method" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

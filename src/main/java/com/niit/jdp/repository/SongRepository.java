@@ -2,10 +2,7 @@ package com.niit.jdp.repository;
 
 import com.niit.jdp.model.Song;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +14,6 @@ public class SongRepository implements Repository<Song> {
     public SongRepository() {
         this.songsList = new ArrayList<>();
     }
-
 
     /**
      * This function returns a list of all the objects in the database.
@@ -51,12 +47,31 @@ public class SongRepository implements Repository<Song> {
      * Given a connection to a database, return the object with the given id.
      *
      * @param connection The connection to the database.
-     * @param id         The id of the display you want to get.
+     * @param name       The name of the song you want to get.
      * @return A single row from the table.
      */
     @Override
-    public Song displayById(Connection connection, int id) {
-        return null;
+    public Song displayByName(Connection connection, String name) {
+        String query = "SELECT * FROM `jukebox`.`song` WHERE(`song_name` LIKE ?)";
+        try (PreparedStatement readValues = connection.prepareStatement(query)) {
+            readValues.setString(1, name + "%");
+            ResultSet songResult = readValues.executeQuery();
+            while (songResult.next()) {
+                song = new Song();
+                song.setId(songResult.getInt("song_id"));
+                song.setName(songResult.getString("song_name"));
+                song.setArtist(songResult.getString("song_artist"));
+                song.setAlbum(songResult.getString("song_album"));
+                song.setGenre(songResult.getString("song_genre"));
+                song.setPath(songResult.getString("song_url"));
+                song.setLength(songResult.getDouble("song_length"));
+                return song;
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return song;
     }
 
     /**
@@ -81,5 +96,16 @@ public class SongRepository implements Repository<Song> {
     @Override
     public boolean delete(Connection connection, int id) {
         return false;
+    }
+
+    /**
+     * Sort a list of objects by alphabetical order.
+     *
+     * @param songList The list of objects to be sorted.
+     * @return A list of objects that are sorted by alphabetical order.
+     */
+    @Override
+    public List<Song> sortByAlphabet(List<Song> songList, SongComparator songComparator) {
+        return songList.stream().sorted(songComparator).toList();
     }
 }

@@ -17,10 +17,10 @@ public interface Repository<T> {
      * Given a connection to a database, return the object with the given id.
      *
      * @param connection The connection to the database.
-     * @param id         The id of the display you want to get.
+     * @param name       The name of the song you want to get.
      * @return A single row from the table.
      */
-    T displayById(Connection connection, int id);
+    T displayByName(Connection connection, String name);
 
     /**
      * This function adds a new object to the database
@@ -40,4 +40,12 @@ public interface Repository<T> {
      * @return A boolean value.
      */
     boolean delete(Connection connection, int id);
+
+    /**
+     * Sort a list of objects by alphabetical order.
+     *
+     * @param tList The list of objects to be sorted.
+     * @return A list of objects that are sorted by alphabetical order.
+     */
+    List<T> sortByAlphabet(List<T> tList, SongComparator songComparator);
 }

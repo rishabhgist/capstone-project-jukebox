@@ -19,7 +19,6 @@ public class CatalogueService {
     List<Song> songList;
 
 
-
     public CatalogueService() throws SQLException {
         databaseService = new DatabaseService();
         songRepository = new SongRepository();
@@ -35,34 +34,36 @@ public class CatalogueService {
             songList = songRepository.displayAll(databaseService.getConnection());
             System.out.println("1.View All Songs \n2.View Playlists\n3.View song by alphabet\n4.Find a song by name\n5.Exit");
             choice = input.nextInt();
-            String stringString = "%-7s %-20s %-16s %-10s %-10s %-1s";
+            String songFormat = "%-7s %-20s %-16s %-10s %-10s %-1s";
+            String playlistFormat = "%-10s %-15s %-1s";
 
             switch (choice) {
                 case 1 -> {
-                    System.out.format(stringString, "Sr No.", "Song Title", "Artist", "Genre", "Duration", "Album");
+                    System.out.format(songFormat, "Sr No.", "Song Title", "Artist", "Genre", "Duration", "Album");
                     System.out.println();
                     for (Song val : songList) {
-                        System.out.format(stringString, val.getId(), val.getName(), val.getArtist(), val.getGenre(), val.getLength(), val.getAlbum() + "\n");
+                        System.out.format(songFormat, val.getId(), val.getName(), val.getArtist(), val.getGenre(), val.getLength(), val.getAlbum() + "\n");
                     }
                 }
                 case 2 -> {
-                   /* List<Playlist> playlistLists = playlistRepository.displayAll(databaseService.getConnection());
-                    System.out.println("Sr No.     Playlist  ");
-                    playlistLists.stream().map(Playlist::toString).forEach(System.out::println);*/
-                    playlistRepository.add(databaseService.getConnection(), new Playlist(1, "db2", songList));
+                    List<Playlist> playlistLists = playlistRepository.displayAll(databaseService.getConnection());
+                    System.out.format(playlistFormat, "Sr. No", "Playlist Name", "Total Songs\n");
+                    for (Playlist playlistList : playlistLists) {
+                        System.out.format(playlistFormat, playlistList.getId(), playlistList.getName(), playlistList.getSongList().size() + "\n");
+                    }
                 }
                 case 3 -> {
                     List<Song> sortedSong = songRepository.sortByAlphabet(songList);
-                    System.out.format(stringString, "Sr No.", "Song Title", "Artist", "Genre", "Duration", "Album" + "\n");
+                    System.out.format(songFormat, "Sr No.", "Song Title", "Artist", "Genre", "Duration", "Album" + "\n");
                     for (Song val : sortedSong) {
-                        System.out.format(stringString, val.getId(), val.getName(), val.getArtist(), val.getGenre(), val.getLength(), val.getAlbum() + "\n");
+                        System.out.format(songFormat, val.getId(), val.getName(), val.getArtist(), val.getGenre(), val.getLength(), val.getAlbum() + "\n");
                     }
                 }
                 case 4 -> {
                     System.out.println("Enter song name to find");
-                    System.out.format(stringString, "Sr No.", "Song Title", "Artist", "Genre", "Duration", "Album" + "\n");
+                    System.out.format(songFormat, "Sr No.", "Song Title", "Artist", "Genre", "Duration", "Album" + "\n");
                     song = songRepository.displayByName(databaseService.getConnection(), "Night");
-                    System.out.format(stringString, song.getId(), song.getName(), song.getArtist(), song.getGenre(), song.getLength(), song.getAlbum() + "\n");
+                    System.out.format(songFormat, song.getId(), song.getName(), song.getArtist(), song.getGenre(), song.getLength(), song.getAlbum() + "\n");
                 }
                 case 5 -> System.out.println("Thanks for using");
                 default -> System.err.println("Invalid choice");

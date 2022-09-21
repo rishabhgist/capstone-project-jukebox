@@ -13,9 +13,7 @@ public class Main {
             DatabaseService databaseService = new DatabaseService();
             CatalogueRepository catalogue = new CatalogueRepository();
             List<Song> songs = catalogue.displayCatalogue(databaseService.getConnection());
-            for (Song song : songs) {
-                System.out.println(song.toString());
-            }
+            catalogue.printCatalogue(songs);
 
         } catch (SQLException e) {
             System.err.println("Unable to connect to Database, " + e.getMessage());

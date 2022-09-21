@@ -24,4 +24,9 @@ public class Song {
         this.songAlbum = songAlbum;
         this.songUrl = songUrl;
     }
+
+    @Override
+    public String toString() {
+        return "      " + songName + "        " + songArtist + "    " + songGenre + "         " + songLength + "        " + songAlbum;
+    }
 }

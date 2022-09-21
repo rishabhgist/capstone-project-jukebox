@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added displayCatalogue method in CatalogueRepository">
+    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added logic to printCatalogue">
       <change afterPath="$PROJECT_DIR$/src/main/resources/songs/happy-travel.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/songs/lie-2-you-ft-dylan-emmet.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/songs/night-sky-ft-julia-mihevc.wav" afterDir="false" />
@@ -15,6 +15,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/resources/songs/whip.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Song.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/CatalogueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/CatalogueRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -339,7 +340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663749752366</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="added printCatalogue method in catalogue">
+      <created>1663752932485</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1663752932485</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -347,26 +355,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="master" />
-                      </list>
-                    </value>
-                  </entry>
-                  <entry key="structure">
-                    <value>
-                      <list>
-                        <option value="dir:C:/Users/Rishabh/IdeaProjects/capstone-project-jukebox/src/main/resources/songs" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -388,8 +377,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added SongPlayer to utility package" />
-    <MESSAGE value="added File class object and AudioInputStream obejct" />
     <MESSAGE value="added File class object and AudioInputStream object" />
     <MESSAGE value="rename main class to Catalogue" />
     <MESSAGE value="added PlaylistRepository class" />
@@ -413,7 +400,9 @@
     <MESSAGE value="added mysql connector dependency and logic in connect method" />
     <MESSAGE value="added no argument constructor to call connect method" />
     <MESSAGE value="added displayCatalogue method in CatalogueRepository" />
-    <option name="LAST_COMMIT_MESSAGE" value="added displayCatalogue method in CatalogueRepository" />
+    <MESSAGE value="added printCatalogue method in catalogue" />
+    <MESSAGE value="added logic to printCatalogue" />
+    <option name="LAST_COMMIT_MESSAGE" value="added logic to printCatalogue" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

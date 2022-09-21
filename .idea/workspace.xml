@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added logic to printCatalogue">
+    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added print default logic and addedHeader">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/songs/happy-travel.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/songs/lie-2-you-ft-dylan-emmet.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/songs/night-sky-ft-julia-mihevc.wav" afterDir="false" />
@@ -13,10 +14,18 @@
       <change afterPath="$PROJECT_DIR$/src/main/resources/songs/trendy-summer.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/songs/tropical-summer.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/songs/whip.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/4/24809a1184a7964e7f32ebdf585553dac4af9abb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/5/357d89d5dc052c07e6a7e597c0121be6d94446bf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/b/5babf34b02434545493a4e3c8d45ca106f1f5e26" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/d/edabe8e0dc5366eb0790ca0232dca645cdbc090d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Playlist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Song.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/CatalogueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/CatalogueRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/CatalogueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/CatalogueService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -347,7 +356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663752932485</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="added print default logic and addedHeader">
+      <created>1663758900648</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1663758900648</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -377,7 +393,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added File class object and AudioInputStream object" />
     <MESSAGE value="rename main class to Catalogue" />
     <MESSAGE value="added PlaylistRepository class" />
     <MESSAGE value="added displayAll and displayById method in PlaylistRepository class" />
@@ -402,7 +417,8 @@
     <MESSAGE value="added displayCatalogue method in CatalogueRepository" />
     <MESSAGE value="added printCatalogue method in catalogue" />
     <MESSAGE value="added logic to printCatalogue" />
-    <option name="LAST_COMMIT_MESSAGE" value="added logic to printCatalogue" />
+    <MESSAGE value="added print default logic and addedHeader" />
+    <option name="LAST_COMMIT_MESSAGE" value="added print default logic and addedHeader" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

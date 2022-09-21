@@ -1,23 +1,17 @@
 package com.niit.jdp;
 
-import com.niit.jdp.model.Song;
-import com.niit.jdp.repository.CatalogueRepository;
-import com.niit.jdp.service.DatabaseService;
+import com.niit.jdp.service.CatalogueService;
 
 import java.sql.SQLException;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        CatalogueService catalogue;
         try {
-            DatabaseService databaseService = new DatabaseService();
-            CatalogueRepository catalogue = new CatalogueRepository();
-            List<Song> songs = catalogue.displayCatalogue(databaseService.getConnection());
-            catalogue.printCatalogue(songs);
-
+            catalogue = new CatalogueService();
+            catalogue.printDefault();
         } catch (SQLException e) {
-            System.err.println("Unable to connect to Database, " + e.getMessage());
+            System.out.println(e.getMessage());
         }
-
     }
 }

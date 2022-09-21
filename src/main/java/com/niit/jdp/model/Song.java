@@ -1,32 +1,92 @@
 package com.niit.jdp.model;
 
-import lombok.Data;
+import java.util.Objects;
 
-@Data
 public class Song {
-    private String songName;
-    private String songGenre;
-    private double songLength;
-    private String songArtist;
 
-    private String songAlbum;
+    private String name;
+    private String genre;
+    private double length;
+    private String artist;
 
-    private String songUrl;
+    private String album;
+
+    private String path;
 
     public Song() {
     }
 
-    public Song(String songName, String songGenre, double songLength, String songArtist, String songAlbum, String songUrl) {
-        this.songName = songName;
-        this.songGenre = songGenre;
-        this.songLength = songLength;
-        this.songArtist = songArtist;
-        this.songAlbum = songAlbum;
-        this.songUrl = songUrl;
+    public Song(String name, String genre, double length, String artist, String album, String path) {
+        this.name = name;
+        this.genre = genre;
+        this.length = length;
+        this.artist = artist;
+        this.album = album;
+        this.path = path;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public double getLength() {
+        return length;
+    }
+
+    public void setLength(double length) {
+        this.length = length;
+    }
+
+    public String getArtist() {
+        return artist;
+    }
+
+    public void setArtist(String artist) {
+        this.artist = artist;
+    }
+
+    public String getAlbum() {
+        return album;
+    }
+
+    public void setAlbum(String album) {
+        this.album = album;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 
     @Override
     public String toString() {
-        return "      " + songName + "        " + songArtist + "    " + songGenre + "         " + songLength + "        " + songAlbum;
+        return "      " + name + "        " + artist + "    " + genre + "         " + length + "        " + album;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Song song)) return false;
+        return Double.compare(song.length, length) == 0 && Objects.equals(name, song.name) && Objects.equals(genre, song.genre) && Objects.equals(artist, song.artist) && Objects.equals(album, song.album) && Objects.equals(path, song.path);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, genre, length, artist, album, path);
     }
 }

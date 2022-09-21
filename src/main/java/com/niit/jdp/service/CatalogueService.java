@@ -1,43 +1,26 @@
-package com.niit.jdp.repository;
+package com.niit.jdp.service;
 
 import com.niit.jdp.model.Song;
-import com.niit.jdp.service.DatabaseService;
+import com.niit.jdp.repository.SongRepository;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class CatalogueRepository {
+public class CatalogueService {
     Song song;
+    SongRepository songRepository;
     DatabaseService databaseService;
 
-    public List<Song> fetchSongs() {
-        List<Song> songsList = new ArrayList<>();
-        String query = "SELECT * FROM `jukebox`.`song`";
-        try {
-            Statement statement = databaseService.getConnection().createStatement();
-            ResultSet songResult = statement.executeQuery(query);
-            while (songResult.next()) {
-                song = new Song();
-                song.setSongName(songResult.getString("song_name"));
-                song.setSongArtist(songResult.getString("song_artist"));
-                song.setSongAlbum(songResult.getString("song_album"));
-                song.setSongGenre(songResult.getString("song_genre"));
-                song.setSongUrl(songResult.getString("song_url"));
-                song.setSongLength(songResult.getDouble("song_length"));
-                songsList.add(song);
-            }
-        } catch (SQLException e) {
-            System.out.println("Incorrect search query" + e.getMessage());
-        }
-        return songsList;
+    public CatalogueService() throws SQLException {
+        databaseService = new DatabaseService();
+        songRepository = new SongRepository();
     }
 
-    public void printMusicMenu(List<Song> songList) {
+    public void displayMusicMenu() {
+        List<Song> songList = songRepository.displayAllSong(databaseService.getConnection());
         int serial = 1;
+        displayHeader();
         System.out.println("Sr No. Song Title          Artist          Genre       Duration    Album       ");
         for (Song fetchSong : songList) {
             System.out.println(serial + fetchSong.toString());
@@ -47,13 +30,14 @@ public class CatalogueRepository {
 
     public void printDefault() {
         Scanner input = new Scanner(System.in);
-        int choice = input.nextInt();
+        int choice = 0;
         do {
             displayHeader();
-            System.out.println("1. View Songs List\n2.View Playlists\n3.Sort song by alphabet\n4.Find a song");
+            System.out.println("1.View Songs List\n2.View Playlists\n3.Sort song by alphabet\n4.Find a song");
+            choice = input.nextInt();
             switch (choice) {
                 case 1:
-                    printMusicMenu(fetchSongs());
+                    displayMusicMenu();
                     break;
                 case 2:
                     break;
@@ -69,7 +53,7 @@ public class CatalogueRepository {
                 default:
                     System.err.println("Invalid choice");
             }
-        } while (choice == 5);
+        } while (choice != 5);
     }
 
     public List<Song> sortByAlphabet() {

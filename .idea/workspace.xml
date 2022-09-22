@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added case 3 in switch to delete song">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/5/357d89d5dc052c07e6a7e597c0121be6d94446bf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added logic to play and stop">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/CatalogueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/CatalogueService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/utility/SongPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/utility/SongPlayer.java" afterDir="false" />
     </list>
@@ -59,7 +57,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "last_opened_file_path": "C:/Users/Rishabh/IdeaProjects/capstone-project-jukebox/src/main/resources/songs",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager"
@@ -143,13 +141,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663664159317</updated>
-    </task>
-    <task id="LOCAL-00001" summary="initial commit">
-      <created>1663664293484</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1663664293485</updated>
     </task>
     <task id="LOCAL-00002" summary="changed maven compiler from 18 to 11">
       <created>1663664328407</created>
@@ -487,7 +478,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663828284411</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="added logic to play and stop">
+      <created>1663830878499</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1663830878499</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -517,7 +515,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added Repository interface" />
     <MESSAGE value="fixed field and classes" />
     <MESSAGE value="added lombok in pom.xml, fix main method missing and added CatalogueRepository java class" />
     <MESSAGE value="added playSong, findSong and sortByAlphabet in CatalogueRepository" />
@@ -542,7 +539,8 @@
     <MESSAGE value="refactored and formatted" />
     <MESSAGE value="added case to addSong in switch" />
     <MESSAGE value="added case 3 in switch to delete song" />
-    <option name="LAST_COMMIT_MESSAGE" value="added case 3 in switch to delete song" />
+    <MESSAGE value="added logic to play and stop" />
+    <option name="LAST_COMMIT_MESSAGE" value="added logic to play and stop" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

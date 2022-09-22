@@ -20,7 +20,8 @@ public class CatalogueService {
     PlaylistRepository playlistRepository;
     List<Song> songList;
     SongPlayer songPlayer;
-
+    String title;
+    Scanner input;
 
     public CatalogueService() throws SQLException {
         databaseService = new DatabaseService();
@@ -28,36 +29,37 @@ public class CatalogueService {
         playlistRepository = new PlaylistRepository();
         songPlayer = new SongPlayer();
         songList = new ArrayList<>();
+        input = new Scanner(System.in);
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public void printDefault() throws SQLException {
-        Scanner input = new Scanner(System.in);
         int choice;
+        setTitle("The Jukebox");
         displayHeader();
         do {
             songList = songRepository.displayAll(databaseService.getConnection());
             System.out.println("\nPlease select from below options or enter 0 to exit");
             System.out.println("1.Song\n2.Playlists\n0.Exit");
             choice = input.nextInt();
-            String playlistFormat = "%-10s %-15s %-1s";
 
             switch (choice) {
                 case 1 -> songCatalogue();
-                case 2 -> {
-                    List<Playlist> playlistLists = playlistRepository.displayAll(databaseService.getConnection());
-                    System.out.format(playlistFormat, "Sr. No", "Playlist Name", "Total Songs\n");
-                    for (Playlist playlistList : playlistLists) {
-                        System.out.format(playlistFormat, playlistList.getId(), playlistList.getName(), playlistList.getSongList().size() + "\n");
-                    }
-                }
-                case 5 -> System.out.println("Thanks for using");
+                case 2 -> playlistCatalogue();
+                case 0 -> System.out.println("Thanks for using");
                 default -> System.err.println("Invalid choice");
             }
         } while (choice != 0);
     }
 
     public void songCatalogue() throws SQLException {
-        Scanner input = new Scanner(System.in);
         int choice;
         do {
             System.out.println("\nPlease select from below options or enter 0 to go back");
@@ -96,36 +98,54 @@ public class CatalogueService {
                         System.out.format(songFormat, val.getId(), val.getName(), val.getArtist(), val.getGenre(), val.getLength(), val.getAlbum() + "\n");
                     }
                 }
+                case 0 -> System.out.println();
                 default -> System.err.println("Invalid Choice");
             }
 
         } while (choice != 0);
     }
 
-    public void playSong(int songId) throws SQLException {
+    public void playlistCatalogue() {
+        String playlistFormat = "%-10s %-15s %-1s";
+        List<Playlist> playlistLists = playlistRepository.displayAll(databaseService.getConnection());
+        System.out.format(playlistFormat, "Sr. No", "Playlist Name", "Total Songs\n");
+        for (Playlist playlistList : playlistLists) {
+            System.out.format(playlistFormat, playlistList.getId(), playlistList.getName(), playlistList.getSongList().size() + "\n");
+        }
+        System.out.println("Enter the playlist you want to play");
+        int playlistSelect = input.nextInt();
+        List<Playlist> playlists = playlistRepository.displayAll(databaseService.getConnection());
+        List<Song> songList1 = new ArrayList<>();
+        for (Playlist playlist : playlists) {
+            if (playlist.getId() == playlistSelect) {
+                setTitle(playlist.getName());
+                songList1 = playlist.getSongList();
+            }
+        }
+        displayHeader();
+        songDisplayFormat(songList1);
+    }
+
+    public void playSong(int songId) {
         for (Song songObj : songList) {
             if (songObj.getId() == songId) {
                 songPlayer.setFilePath(songObj.getPath());
-                if (songPlayer.isClipStatus()) {
+                if (!songPlayer.isClipStatus()) {
                     songPlayer.stop();
-                } else {
-                    songPlayer.setClipStatus(true);
-                    songPlayer.play();
                 }
-            } else {
-                System.err.println("Song not found");
+                playerControl();
             }
         }
+
     }
 
     public void displayHeader() {
-        System.out.println("===============================================================================");
-        System.out.println("||                               The Jukebox                                 ||");
-        System.out.println("===============================================================================");
+        System.out.println("=============================================================================");
+        System.out.println("||                               " + getTitle() + "\t                         ||");
+        System.out.println("=============================================================================");
     }
 
     public boolean getInputFromUserAndAdd() {
-        Scanner input = new Scanner(System.in);
         try {
             System.out.println("Enter Song name");
             String name = input.nextLine();
@@ -150,4 +170,31 @@ public class CatalogueService {
         return false;
     }
 
+    public void playerControl() {
+        int choice;
+        do {
+            String status = "Pause";
+            if (songPlayer.isPauseStatus()) {
+                status = "Play";
+            }
+            System.out.println("1." + status + "\n2.Stop");
+            choice = input.nextInt();
+            switch (choice) {
+                case 1 -> songPlayer.pause();
+                case 2 -> songPlayer.stop();
+                default -> System.err.println("Invalid choice");
+            }
+        } while (choice != 2);
+    }
+
+    public void songDisplayFormat(List<Song> songList) {
+        int choice;
+        System.out.println("\n\nPlease select from below options or enter 0 to go back");
+        String songFormat = "%-7s %-20s %-16s %-10s %-10s %-1s";
+        System.out.format(songFormat, "Sr No.", "Song Title", "Artist", "Genre", "Duration", "Album\n");
+        songList.forEach(val -> System.out.format(songFormat, val.getId(), val.getName(), val.getArtist(), val.getGenre(), val.getLength(), val.getAlbum() + "\n"));
+        System.out.println("Enter the song id you want to play");
+        choice = input.nextInt();
+        playSong(choice);
+    }
 }

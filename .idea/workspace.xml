@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="fixed numberOfRowsAffected redundant variable">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/niit/jdp/service/DatabaseServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/niit/jdp/service/DatabaseServiceTest.java" afterDir="false" />
+    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="fixed DatabaseServiceTest method givenIncorrectValueTestConnectionFail">
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/niit/jdp/repository/PlaylistRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/niit/jdp/repository/PlaylistRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,13 +190,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663664159317</updated>
-    </task>
-    <task id="LOCAL-00013" summary="rename main class to Catalogue">
-      <created>1663665746159</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1663665746159</updated>
     </task>
     <task id="LOCAL-00014" summary="added PlaylistRepository class">
       <created>1663666049003</created>
@@ -535,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663873637075</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="fixed DatabaseServiceTest method givenIncorrectValueTestConnectionFail">
+      <created>1663874546438</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1663874546438</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -565,7 +564,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed field name in song, playlist added logic in to display All song in SongRepository" />
     <MESSAGE value="added Repository interface abstract displayAll, displayById, add and delete methods" />
     <MESSAGE value="added Repository implementation for Song and Playlist" />
     <MESSAGE value="added logic in sortByAlphabet and displayByName" />
@@ -590,7 +588,8 @@
     <MESSAGE value="added givenIncorrectIdDeleteFails" />
     <MESSAGE value="added givenNullPlaylistAddFails in PlaylistRepositoryTest" />
     <MESSAGE value="fixed numberOfRowsAffected redundant variable" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed numberOfRowsAffected redundant variable" />
+    <MESSAGE value="fixed DatabaseServiceTest method givenIncorrectValueTestConnectionFail" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed DatabaseServiceTest method givenIncorrectValueTestConnectionFail" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

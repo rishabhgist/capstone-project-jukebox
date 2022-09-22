@@ -15,24 +15,24 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 class PlaylistRepositoryTest {
     PlaylistRepository playlistRepository;
     DatabaseService databaseService;
+
     Playlist playlist;
 
     @BeforeEach
-    void setUp() {
-        try {
-            databaseService = new DatabaseService();
-
-        } catch (SQLException e) {
-            System.err.println(e.getMessage());
-        }
+    void setUp() throws SQLException {
+        databaseService = new DatabaseService();
         playlistRepository = new PlaylistRepository();
-
     }
 
     @AfterEach
     void tearDown() {
         playlistRepository = null;
         databaseService = null;
+    }
+
+    @Test
+    void givenCorrectIdDeleteSuccessFull() throws SQLException {
+        Assertions.assertTrue(playlistRepository.delete(databaseService.getConnection(), 8));
     }
 
     @Test

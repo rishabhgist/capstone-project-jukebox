@@ -3,6 +3,7 @@ package com.niit.jdp.repository;
 import com.niit.jdp.model.Song;
 import com.niit.jdp.service.DatabaseService;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -32,10 +33,18 @@ class SongRepositoryTest {
     }
 
     @Test
-    void displayByName() {
+    void givenCorrectNameSuccessful() {
+        song = songRepository.displayByName(databaseService.getConnection(), "Lie");
+        Assertions.assertEquals("Lie 2 You", song.getName());
     }
 
     @Test
-    void delete() {
+    void givenIncorrectNameFailed() {
+        song = songRepository.displayByName(databaseService.getConnection(), "0");
+        Assertions.assertNull(song);
+    }
+
+    @Test
+    void givenIncorrectIdDeleteFails() {
     }
 }

@@ -39,6 +39,7 @@ public class SongRepository implements Repository<Song> {
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+            return songsList;
         }
         return songsList;
     }
@@ -68,8 +69,8 @@ public class SongRepository implements Repository<Song> {
                 return song;
             }
 
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
+        } catch (SQLException | NullPointerException e) {
+            System.err.println("No Song found");
         }
         return song;
     }

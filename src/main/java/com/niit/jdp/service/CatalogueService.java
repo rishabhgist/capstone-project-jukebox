@@ -5,6 +5,7 @@ import com.niit.jdp.model.Playlist;
 import com.niit.jdp.model.Song;
 import com.niit.jdp.repository.PlaylistRepository;
 import com.niit.jdp.repository.SongRepository;
+import com.niit.jdp.utility.SongPlayer;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -18,16 +19,18 @@ public class CatalogueService {
     DatabaseService databaseService;
     PlaylistRepository playlistRepository;
     List<Song> songList;
+    SongPlayer songPlayer;
 
 
     public CatalogueService() throws SQLException {
         databaseService = new DatabaseService();
         songRepository = new SongRepository();
         playlistRepository = new PlaylistRepository();
+        songPlayer = new SongPlayer();
         songList = new ArrayList<>();
     }
 
-    public void printDefault() {
+    public void printDefault() throws SQLException {
         Scanner input = new Scanner(System.in);
         int choice;
         displayHeader();
@@ -46,7 +49,6 @@ public class CatalogueService {
                     for (Playlist playlistList : playlistLists) {
                         System.out.format(playlistFormat, playlistList.getId(), playlistList.getName(), playlistList.getSongList().size() + "\n");
                     }
-                    setSongListNull();
                 }
                 case 5 -> System.out.println("Thanks for using");
                 default -> System.err.println("Invalid choice");
@@ -68,14 +70,7 @@ public class CatalogueService {
                     songList.forEach(val -> System.out.format(songFormat, val.getId(), val.getName(), val.getArtist(), val.getGenre(), val.getLength(), val.getAlbum() + "\n"));
                     System.out.println("Enter the song id you want to play");
                     int songToPlay = input.nextInt();
-                    for (Song song1 : songList) {
-                        if (song1.getId() == songToPlay) try {
-                            playSong(song1);
-                        } catch (InsertErrorException e) {
-                            System.err.println("Unable to find song");
-                        }
-                        System.err.println("Invalid Option");
-                    }
+                    playSong(songToPlay);
                 }
                 case 2 -> {
                     if (getInputFromUserAndAdd()) System.out.println("Song Added Successfully");
@@ -107,14 +102,20 @@ public class CatalogueService {
         } while (choice != 0);
     }
 
-    public void playSong(Song song) throws InsertErrorException {
-        System.out.println(song.getPath());
-        songCatalogue();
-    }
-
-
-    public void setSongListNull() {
-        this.songList = null;
+    public void playSong(int songId) throws SQLException {
+        for (Song songObj : songList) {
+            if (songObj.getId() == songId) {
+                songPlayer.setFilePath(songObj.getPath());
+                if (songPlayer.isClipStatus()) {
+                    songPlayer.stop();
+                } else {
+                    songPlayer.setClipStatus(true);
+                    songPlayer.play();
+                }
+            } else {
+                System.err.println("Song not found");
+            }
+        }
     }
 
     public void displayHeader() {
@@ -148,4 +149,5 @@ public class CatalogueService {
         }
         return false;
     }
+
 }

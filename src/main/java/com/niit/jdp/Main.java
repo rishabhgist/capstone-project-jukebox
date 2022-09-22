@@ -1,6 +1,5 @@
 package com.niit.jdp;
 
-import com.niit.jdp.exception.InsertErrorException;
 import com.niit.jdp.service.CatalogueService;
 
 import java.sql.SQLException;
@@ -11,7 +10,7 @@ public class Main {
         try {
             catalogue = new CatalogueService();
             catalogue.printDefault();
-        } catch (SQLException | InsertErrorException e) {
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }

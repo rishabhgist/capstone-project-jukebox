@@ -70,7 +70,7 @@ public class PlaylistRepository implements Repository<Playlist> {
     @Override
     // This function adds a new object to the database
     public boolean add(Connection connection, Playlist playlist) throws InsertErrorException {
-        int numberOfRowsAffected = 0;
+        int numberOfRowsAffected;
         if (playlist != null) {
             Map<Song, Integer> collect = playlist.getSongList().stream().collect(Collectors.toMap(Function.identity(), Song::getId));
             String listToStr = collect.values().toString().replaceAll("\\[", "").replaceAll("]", "").replace(" ", "");

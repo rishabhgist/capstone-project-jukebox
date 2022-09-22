@@ -67,13 +67,12 @@ public class PlaylistRepository implements Repository<Playlist> {
     @Override
     public boolean add(Connection connection, Playlist playlist) throws InsertErrorException {
         Map<Song, Integer> collect = playlist.getSongList().stream().collect(Collectors.toMap(Function.identity(), Song::getId));
-        String listToStr = collect.values().toString().replaceAll("\\[", "").replaceAll("\\]", "").replace(" ", "");
-        String insertQuery = "insert into `jukebox`.`playlist` (`playlist_id`, `playlist_name`, `playlist_data`) VALUES (?, ?, ?)";
+        String listToStr = collect.values().toString().replaceAll("\\[", "").replaceAll("]", "").replace(" ", "");
+        String insertQuery = "insert into `jukebox`.`playlist` (`playlist_name`, `playlist_data`) VALUES (?, ?)";
         int numberOfRowsAffected;
         try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
-            preparedStatement.setInt(1, playlist.getId());
-            preparedStatement.setString(2, playlist.getName());
-            preparedStatement.setString(3, listToStr);
+            preparedStatement.setString(1, playlist.getName());
+            preparedStatement.setString(2, listToStr);
             numberOfRowsAffected = preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new InsertErrorException(e.getMessage());

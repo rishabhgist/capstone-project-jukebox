@@ -83,16 +83,15 @@ public class SongRepository implements Repository<Song> {
      */
     @Override
     public boolean add(Connection connection, Song song) throws SQLException {
-        String addQuery = "insert into `jukebox`.`song` (`song_id`, `song_name`, `song_genre`, `song_artist`, `song_length`, `song_album`, `song_url`) " + "VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String addQuery = "insert into `jukebox`.`song` (`song_name`, `song_genre`, `song_artist`, `song_length`, `song_album`, `song_url`) " + "VALUES (?, ?, ?, ?, ?, ?)";
         int noOfRowsAffected;
         try (PreparedStatement preparedStatement = connection.prepareStatement(addQuery)) {
-            preparedStatement.setInt(1, song.getId());
-            preparedStatement.setString(2, song.getName());
-            preparedStatement.setString(3, song.getGenre());
-            preparedStatement.setString(4, song.getArtist());
-            preparedStatement.setDouble(5, song.getLength());
-            preparedStatement.setString(6, song.getAlbum());
-            preparedStatement.setString(7, song.getPath());
+            preparedStatement.setString(1, song.getName());
+            preparedStatement.setString(2, song.getGenre());
+            preparedStatement.setString(3, song.getArtist());
+            preparedStatement.setDouble(4, song.getLength());
+            preparedStatement.setString(5, song.getAlbum());
+            preparedStatement.setString(6, song.getPath());
             noOfRowsAffected = preparedStatement.executeUpdate();
         }
         return noOfRowsAffected > 0;

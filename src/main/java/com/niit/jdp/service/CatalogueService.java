@@ -27,7 +27,7 @@ public class CatalogueService {
         songList = new ArrayList<>();
     }
 
-    public void printDefault() throws InsertErrorException {
+    public void printDefault() {
         Scanner input = new Scanner(System.in);
         int choice;
         displayHeader();
@@ -54,7 +54,7 @@ public class CatalogueService {
         } while (choice != 0);
     }
 
-    public void songCatalogue() throws InsertErrorException {
+    public void songCatalogue() throws SQLException {
         Scanner input = new Scanner(System.in);
         int choice;
         do {
@@ -69,18 +69,23 @@ public class CatalogueService {
                     System.out.println("Enter the song id you want to play");
                     int songToPlay = input.nextInt();
                     for (Song song1 : songList) {
-                        if (song1.getId() == songToPlay) {
-                            try {
-                                playSong(song1);
-                            } catch (InsertErrorException e) {
-                                System.err.println("Unable to find song");
-                            }
-                        } else System.err.println("Invalid Option");
+                        if (song1.getId() == songToPlay) try {
+                            playSong(song1);
+                        } catch (InsertErrorException e) {
+                            System.err.println("Unable to find song");
+                        }
+                        System.err.println("Invalid Option");
                     }
                 }
                 case 2 -> {
                     if (getInputFromUserAndAdd()) System.out.println("Song Added Successfully");
                     else System.err.println("Song was not added");
+                }
+                case 3 -> {
+                    int songId = input.nextInt();
+                    if (songRepository.delete(databaseService.getConnection(), songId))
+                        System.out.println("Deleted Successful");
+                    else System.err.println("Unable to delete song, incorrect song id");
                 }
                 case 4 -> {
                     System.out.println("Enter song name to find");

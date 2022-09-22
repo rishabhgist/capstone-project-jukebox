@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="refactored and formatted">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Song.java" afterDir="false" />
+    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added case to addSong in switch">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/CatalogueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/CatalogueService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -471,7 +468,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663825477142</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="added case to addSong in switch">
+      <created>1663827983916</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1663827983916</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -501,7 +505,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added query to create and use database" />
     <MESSAGE value="added query to create table song with columns &amp;&amp; create table playlist with columns" />
     <MESSAGE value="added Repository interface" />
     <MESSAGE value="fixed field and classes" />
@@ -526,7 +529,8 @@
     <MESSAGE value="added, add and delete method logic in SongRepository" />
     <MESSAGE value="added songCatalogue method" />
     <MESSAGE value="refactored and formatted" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored and formatted" />
+    <MESSAGE value="added case to addSong in switch" />
+    <option name="LAST_COMMIT_MESSAGE" value="added case to addSong in switch" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

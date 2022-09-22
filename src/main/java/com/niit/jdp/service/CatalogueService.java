@@ -14,7 +14,6 @@ import java.util.Scanner;
 
 public class CatalogueService {
 
-    Song song;
     SongRepository songRepository;
     DatabaseService databaseService;
     PlaylistRepository playlistRepository;
@@ -65,12 +64,9 @@ public class CatalogueService {
             System.out.println("\nPlease select from below options or enter 0 to go back");
             System.out.println("1.View All Songs\n2.Add Song\n3.Delete Song\n4.Find song by name\n0.Exit");
             choice = input.nextInt();
-            String songFormat = "%-7s %-20s %-16s %-10s %-10s %-1s";
             switch (choice) {
                 case 1 -> {
-                    System.out.format(songFormat, "Sr No.", "Song Title", "Artist", "Genre", "Duration", "Album\n");
-                    songList.forEach(val -> System.out.format(songFormat, val.getId(), val.getName(), val.getArtist(), val.getGenre(), val.getLength(), val.getAlbum() + "\n"));
-                    System.out.println("Enter the song id you want to play");
+                    songDisplayFormat(songList);
                     int songToPlay = input.nextInt();
                     playSong(songToPlay);
                 }
@@ -86,17 +82,14 @@ public class CatalogueService {
                 }
                 case 4 -> {
                     System.out.println("Enter song name to find");
-                    System.out.format(songFormat, "Sr No.", "Song Title", "Artist", "Genre", "Duration", "Album" + "\n");
-                    String findName = input.nextLine();
-                    song = songRepository.displayByName(databaseService.getConnection(), findName);
-                    System.out.format(songFormat, song.getId(), song.getName(), song.getArtist(), song.getGenre(), song.getLength(), song.getAlbum() + "\n");
+                    String findName = input.next();
+                    List<Song> songList1 = new ArrayList<>();
+                    songList1.add(songRepository.displayByName(databaseService.getConnection(), findName));
+                    songDisplayFormat(songList1);
                 }
                 case 5 -> {
                     List<Song> sortedSong = songRepository.sortByAlphabet(songList);
-                    System.out.format(songFormat, "Sr No.", "Song Title", "Artist", "Genre", "Duration", "Album" + "\n");
-                    for (Song val : sortedSong) {
-                        System.out.format(songFormat, val.getId(), val.getName(), val.getArtist(), val.getGenre(), val.getLength(), val.getAlbum() + "\n");
-                    }
+                    songDisplayFormat(sortedSong);
                 }
                 case 0 -> System.out.println();
                 default -> System.err.println("Invalid Choice");

@@ -17,6 +17,8 @@ public class CatalogueService {
     SongRepository songRepository;
     DatabaseService databaseService;
     PlaylistRepository playlistRepository;
+
+    Playlist playlist;
     List<Song> songList;
     SongPlayer songPlayer;
     String title;
@@ -29,6 +31,7 @@ public class CatalogueService {
         songPlayer = new SongPlayer();
         songList = new ArrayList<>();
         input = new Scanner(System.in);
+        playlist = new Playlist();
     }
 
     public String getTitle() {
@@ -39,7 +42,7 @@ public class CatalogueService {
         this.title = title;
     }
 
-    public void printDefault() throws SQLException {
+    public void printDefault() throws SQLException, InsertErrorException {
         int choice;
         setTitle("The Jukebox");
         displayHeader();
@@ -94,7 +97,7 @@ public class CatalogueService {
         } while (choice != 0);
     }
 
-    public void playlistCatalogue() throws SQLException {
+    public void playlistCatalogue() throws SQLException, InsertErrorException {
         List<Playlist> playlistLists = playlistRepository.displayAll(databaseService.getConnection());
         int choice;
         do {
@@ -103,7 +106,11 @@ public class CatalogueService {
             choice = input.nextInt();
             switch (choice) {
                 case 1 -> playlistDisplayFormat(playlistLists);
-                case 2 -> createPlaylist();
+                case 2 -> {
+                    if (createPlaylist()) {
+                        System.out.println("Playlist added Successfully");
+                    } else System.err.println("Unable to add Playlist");
+                }
                 case 3 -> {
                     System.out.println("Enter Playlist Id to Delete");
                     int id = input.nextInt();
@@ -161,8 +168,27 @@ public class CatalogueService {
         return false;
     }
 
-    public boolean createPlaylist() {
-        return false;
+    public boolean createPlaylist() throws InsertErrorException {
+        List<Song> songs = new ArrayList<>();
+        String songFormat = "%-7s %-20s %-16s %-10s %-10s %-1s";
+        System.out.println("\nSongs List");
+        System.out.format(songFormat, "Sr No.", "Song Title", "Artist", "Genre", "Duration", "Album\n");
+        songList.forEach(val -> System.out.format(songFormat, val.getId(), val.getName(), val.getArtist(), val.getGenre(), val.getLength(), val.getAlbum() + "\n"));
+        System.out.println("Enter the name of the Playlist");
+        playlist.setName(input.next());
+        int choice;
+        do {
+            System.out.println("Enter the id of song you want to add or press 0 to go back");
+            choice = input.nextInt();
+            for (Song val : songList) {
+                if (val.getId() == choice) {
+                    songs.add(val);
+                }
+            }
+        } while (choice != 0);
+        playlist.setSongList(songs);
+        playlistDisplayFormat(playlistRepository.displayAll(databaseService.getConnection()));
+        return playlistRepository.add(databaseService.getConnection(), playlist);
     }
 
     public void playerControl() {
@@ -206,10 +232,10 @@ public class CatalogueService {
         System.out.println("Enter the playlist you want to play");
         int playlistSelect = input.nextInt();
         List<Song> songList1 = new ArrayList<>();
-        for (Playlist playlist : playlistLists) {
-            if (playlist.getId() == playlistSelect) {
-                setTitle(playlist.getName());
-                songList1 = playlist.getSongList();
+        for (Playlist values : playlistLists) {
+            if (values.getId() == playlistSelect) {
+                setTitle(values.getName());
+                songList1 = values.getSongList();
             }
         }
         displayHeader();

@@ -37,18 +37,21 @@ public class PlaylistRepository implements Repository<Playlist> {
         List<Song> songList = new ArrayList<>();
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             ResultSet playlistResult = preparedStatement.executeQuery();
+            List<Song> songList1 = songRepository.displayAll(connection);
             while (playlistResult.next()) {
                 playlist = new Playlist();
                 playlist.setId(playlistResult.getInt("playlist_id"));
                 playlist.setName(playlistResult.getString("playlist_name"));
-                String[] playlistData = playlistResult.getString("playlist_data").split(",");
-                Song nextId = songRepository.displayAll(connection).iterator().next();
+                List<String> playlistData = List.of(playlistResult.getString("playlist_data").split(","));
                 for (String playlistDatum : playlistData) {
-                    if (nextId.getId() == Integer.parseInt(playlistDatum)) {
-                        songList.add(new Song(nextId.getId(), nextId.getName(), nextId.getGenre(), nextId.getLength(), nextId.getArtist(), nextId.getAlbum(), nextId.getPath()));
+                    int a = Integer.parseInt(playlistDatum.trim());
+                    for (Song song : songList1) {
+                        if (a == song.getId()) {
+                            songList.add(new Song(song.getId(), song.getName(), song.getGenre(), song.getLength(), song.getArtist(), song.getAlbum(), song.getPath()));
+                        }
+                        playlist.setSongList(songList);
                     }
                 }
-                playlist.setSongList(songList);
                 playlistList.add(playlist);
             }
         } catch (SQLException e) {

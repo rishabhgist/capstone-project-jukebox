@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added givenIncorrectIdDeleteFails">
+    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="fixed numberOfRowsAffected redundant variable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/niit/jdp/repository/PlaylistRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/niit/jdp/repository/PlaylistRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/niit/jdp/service/DatabaseServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/niit/jdp/service/DatabaseServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +93,39 @@
       <command value="c" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PlaylistRepositoryTest.givenNullPlaylistAddFails">
+  <component name="RunManager" selected="JUnit.DatabaseServiceTest.givenUrlUsernamePasswordTestConnectionSuccessful">
+    <configuration name="DatabaseServiceTest.givenIncorrectValueTestConnectionFail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="capstone-project-jukebox" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niit.jdp.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.niit.jdp.service" />
+      <option name="MAIN_CLASS_NAME" value="com.niit.jdp.service.DatabaseServiceTest" />
+      <option name="METHOD_NAME" value="givenIncorrectValueTestConnectionFail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DatabaseServiceTest.givenUrlUsernamePasswordTestConnectionSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="capstone-project-jukebox" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niit.jdp.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.niit.jdp.service" />
+      <option name="MAIN_CLASS_NAME" value="com.niit.jdp.service.DatabaseServiceTest" />
+      <option name="METHOD_NAME" value="givenUrlUsernamePasswordTestConnectionSuccessful" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PlaylistRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="capstone-project-jukebox" />
       <extension name="coverage">
@@ -126,22 +157,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SongRepositoryTest.givenCorrectNameSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="capstone-project-jukebox" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.niit.jdp.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.niit.jdp.repository" />
-      <option name="MAIN_CLASS_NAME" value="com.niit.jdp.repository.SongRepositoryTest" />
-      <option name="METHOD_NAME" value="givenCorrectNameSuccessful" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SongRepositoryTest.givenIncorrectIdDeleteFails" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="capstone-project-jukebox" />
       <extension name="coverage">
@@ -158,29 +173,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SongRepositoryTest.givenIncorrectNameFailed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="capstone-project-jukebox" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.niit.jdp.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.niit.jdp.repository" />
-      <option name="MAIN_CLASS_NAME" value="com.niit.jdp.repository.SongRepositoryTest" />
-      <option name="METHOD_NAME" value="givenIncorrectNameFailed" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DatabaseServiceTest.givenUrlUsernamePasswordTestConnectionSuccessful" />
+        <item itemvalue="JUnit.DatabaseServiceTest.givenIncorrectValueTestConnectionFail" />
         <item itemvalue="JUnit.PlaylistRepositoryTest.givenNullPlaylistAddFails" />
         <item itemvalue="JUnit.PlaylistRepositoryTest" />
         <item itemvalue="JUnit.SongRepositoryTest.givenIncorrectIdDeleteFails" />
-        <item itemvalue="JUnit.SongRepositoryTest.givenIncorrectNameFailed" />
-        <item itemvalue="JUnit.SongRepositoryTest.givenCorrectNameSuccessful" />
       </list>
     </recent_temporary>
   </component>
@@ -192,20 +191,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663664159317</updated>
-    </task>
-    <task id="LOCAL-00011" summary="added SongPlayer to utility package">
-      <created>1663665528350</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1663665528350</updated>
-    </task>
-    <task id="LOCAL-00012" summary="added File class object and AudioInputStream object">
-      <created>1663665691713</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1663665691713</updated>
     </task>
     <task id="LOCAL-00013" summary="rename main class to Catalogue">
       <created>1663665746159</created>
@@ -536,7 +521,21 @@
       <option name="project" value="LOCAL" />
       <updated>1663872390850</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="added givenNullPlaylistAddFails in PlaylistRepositoryTest">
+      <created>1663873595087</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1663873595087</updated>
+    </task>
+    <task id="LOCAL-00061" summary="fixed numberOfRowsAffected redundant variable">
+      <created>1663873637075</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1663873637075</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -566,8 +565,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added logic to printCatalogue" />
-    <MESSAGE value="added print default logic and addedHeader" />
     <MESSAGE value="fixed field name in song, playlist added logic in to display All song in SongRepository" />
     <MESSAGE value="added Repository interface abstract displayAll, displayById, add and delete methods" />
     <MESSAGE value="added Repository implementation for Song and Playlist" />
@@ -591,7 +588,9 @@
     <MESSAGE value="added SongRepositoryTest class and initialized objects" />
     <MESSAGE value="added givenCorrectNameSuccessful and givenIncorrectNameFailed" />
     <MESSAGE value="added givenIncorrectIdDeleteFails" />
-    <option name="LAST_COMMIT_MESSAGE" value="added givenIncorrectIdDeleteFails" />
+    <MESSAGE value="added givenNullPlaylistAddFails in PlaylistRepositoryTest" />
+    <MESSAGE value="fixed numberOfRowsAffected redundant variable" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed numberOfRowsAffected redundant variable" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

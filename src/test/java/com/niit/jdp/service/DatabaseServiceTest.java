@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
@@ -17,7 +16,7 @@ class DatabaseServiceTest {
         try {
             databaseService = new DatabaseService();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            System.err.println("Access denied");
         }
     }
 
@@ -28,16 +27,11 @@ class DatabaseServiceTest {
 
     @Test
     void givenUrlUsernamePasswordTestConnectionSuccessful() throws SQLException {
-        Assertions.assertEquals(true, databaseService.connect());
+        Assertions.assertTrue(databaseService.connect());
     }
 
     @Test
     void givenIncorrectValueTestConnectionFail() {
-        try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/jukebox", "root", "");
-        } catch (SQLException e) {
-            String message = e.getMessage();
-            Assertions.assertEquals("Access denied for user 'root'@'localhost' (using password: NO)", message);
-        }
+        Assertions.assertThrows(SQLException.class, () -> DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/jukebox", "root", ""));
     }
 }

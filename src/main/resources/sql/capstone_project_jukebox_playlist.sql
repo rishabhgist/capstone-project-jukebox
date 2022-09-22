@@ -10,4 +10,5 @@ insert into `jukebox`.`playist` (`playlist_id`, `playlist_name`, `playlist_data`
 insert into `jukebox`.`playist` (`playlist_id`, `playlist_name`, `playlist_data`) VALUES ('2', 'Jazz', '3,4,2');
 insert into `jukebox`.`playist` (`playlist_id`, `playlist_name`, `playlist_data`) VALUES ('3', 'Pop', '1,2,5');
 
-
+-- select all from playlist
+select * from `jukebox`.`playlist`;

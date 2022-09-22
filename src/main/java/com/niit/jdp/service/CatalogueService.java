@@ -32,6 +32,7 @@ public class CatalogueService {
         displayHeader();
         do {
             songList = songRepository.displayAll(databaseService.getConnection());
+            System.out.println("\nPlease select from below options or enter 5 to exit");
             System.out.println("1.View All Songs \n2.View Playlists\n3.View song by alphabet\n4.Find a song by name\n5.Exit");
             choice = input.nextInt();
             String songFormat = "%-7s %-20s %-16s %-10s %-10s %-1s";
@@ -44,6 +45,7 @@ public class CatalogueService {
                     for (Song val : songList) {
                         System.out.format(songFormat, val.getId(), val.getName(), val.getArtist(), val.getGenre(), val.getLength(), val.getAlbum() + "\n");
                     }
+                    setSongListNull();
                 }
                 case 2 -> {
                     List<Playlist> playlistLists = playlistRepository.displayAll(databaseService.getConnection());
@@ -51,6 +53,7 @@ public class CatalogueService {
                     for (Playlist playlistList : playlistLists) {
                         System.out.format(playlistFormat, playlistList.getId(), playlistList.getName(), playlistList.getSongList().size() + "\n");
                     }
+                    setSongListNull();
                 }
                 case 3 -> {
                     List<Song> sortedSong = songRepository.sortByAlphabet(songList);
@@ -58,12 +61,14 @@ public class CatalogueService {
                     for (Song val : sortedSong) {
                         System.out.format(songFormat, val.getId(), val.getName(), val.getArtist(), val.getGenre(), val.getLength(), val.getAlbum() + "\n");
                     }
+                    setSongListNull();
                 }
                 case 4 -> {
                     System.out.println("Enter song name to find");
                     System.out.format(songFormat, "Sr No.", "Song Title", "Artist", "Genre", "Duration", "Album" + "\n");
                     song = songRepository.displayByName(databaseService.getConnection(), "Night");
                     System.out.format(songFormat, song.getId(), song.getName(), song.getArtist(), song.getGenre(), song.getLength(), song.getAlbum() + "\n");
+                    setSongListNull();
                 }
                 case 5 -> System.out.println("Thanks for using");
                 default -> System.err.println("Invalid choice");
@@ -73,6 +78,10 @@ public class CatalogueService {
 
     public void playSong(Song song) {
         System.out.println();
+    }
+
+    public void setSongListNull() {
+        this.songList = null;
     }
 
     public void displayHeader() {

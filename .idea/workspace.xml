@@ -4,21 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added logic to add playlist and display playlist">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/songs/happy-travel.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/songs/lie-2-you-ft-dylan-emmet.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/songs/night-sky-ft-julia-mihevc.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/songs/salangseuleoun.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/songs/town.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/songs/trendy-summer.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/songs/tropical-summer.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/songs/whip.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/niit/jdp/service/DatabaseServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added junit in pom.xml and created DatabaseServiceTest class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/CatalogueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/CatalogueService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/capstone_project_jukebox_playlist.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql/capstone_project_jukebox_playlist.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/niit/jdp/service/DatabaseServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/niit/jdp/service/DatabaseServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,8 +70,14 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Rishabh\IdeaProjects\capstone-project-jukebox\src\main\resources\sql" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.niit.jdp.service" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.DatabaseServiceTest.givenIncorrectValueTestConnectionFail">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.niit.jdp.Main" />
       <module name="capstone-project-jukebox" />
@@ -97,8 +91,42 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DatabaseServiceTest.givenIncorrectValueTestConnectionFail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="capstone-project-jukebox" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niit.jdp.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.niit.jdp.service" />
+      <option name="MAIN_CLASS_NAME" value="com.niit.jdp.service.DatabaseServiceTest" />
+      <option name="METHOD_NAME" value="givenIncorrectValueTestConnectionFail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DatabaseServiceTest.givenUrlUsernamePasswordTestConnectionSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="capstone-project-jukebox" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niit.jdp.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.niit.jdp.service" />
+      <option name="MAIN_CLASS_NAME" value="com.niit.jdp.service.DatabaseServiceTest" />
+      <option name="METHOD_NAME" value="givenUrlUsernamePasswordTestConnectionSuccessful" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DatabaseServiceTest.givenIncorrectValueTestConnectionFail" />
+        <item itemvalue="JUnit.DatabaseServiceTest.givenUrlUsernamePasswordTestConnectionSuccessful" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -406,7 +434,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663792004003</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="added junit in pom.xml and created DatabaseServiceTest class">
+      <created>1663819306267</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1663819306267</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -436,7 +471,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added displayAllSong, displaySong, addSongToPlaylist" />
     <MESSAGE value="added displayAllSong, displaySong, addSongToPlaylist methods" />
     <MESSAGE value="added method to addNewSong and addNewSong" />
     <MESSAGE value="added capstone_project_jukebox.sql file to store sql quiries" />
@@ -461,7 +495,8 @@
     <MESSAGE value="added logic in sortByAlphabet and displayByName" />
     <MESSAGE value="added logic to add playlist" />
     <MESSAGE value="added logic to add playlist and display playlist" />
-    <option name="LAST_COMMIT_MESSAGE" value="added logic to add playlist and display playlist" />
+    <MESSAGE value="added junit in pom.xml and created DatabaseServiceTest class" />
+    <option name="LAST_COMMIT_MESSAGE" value="added junit in pom.xml and created DatabaseServiceTest class" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

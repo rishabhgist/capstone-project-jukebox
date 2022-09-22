@@ -65,11 +65,7 @@ public class CatalogueService {
             System.out.println("1.View All Songs\n2.Add Song\n3.Delete Song\n4.Find song by name\n0.Exit");
             choice = input.nextInt();
             switch (choice) {
-                case 1 -> {
-                    songDisplayFormat(songList);
-                    int songToPlay = input.nextInt();
-                    playSong(songToPlay);
-                }
+                case 1 -> songDisplayFormat(songList);
                 case 2 -> {
                     if (getInputFromUserAndAdd()) System.out.println("Song Added Successfully");
                     else System.err.println("Song was not added");
@@ -172,10 +168,12 @@ public class CatalogueService {
             }
             System.out.println("1." + status + "\n2.Stop");
             choice = input.nextInt();
-            switch (choice) {
-                case 1 -> songPlayer.pause();
-                case 2 -> songPlayer.stop();
-                default -> System.err.println("Invalid choice");
+            if (choice == 1) {
+                songPlayer.pause();
+            } else if (choice == 2) {
+                songPlayer.stop();
+            } else {
+                System.err.println("Invalid choice");
             }
         } while (choice != 2);
     }

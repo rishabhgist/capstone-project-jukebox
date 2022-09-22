@@ -8,13 +8,20 @@ public class SongPlayer {
     AudioInputStream audioInputStream;
     Clip clip;
 
-    long clipTime;
+    private long clipTime;
 
-    String filePath;
+    private String filePath;
     private boolean clipStatus;
 
     private boolean pauseStatus;
 
+    public long getClipTime() {
+        return clipTime;
+    }
+
+    public void setClipTime(long clipTime) {
+        this.clipTime = clipTime;
+    }
 
     public boolean isClipStatus() {
         return clipStatus;
@@ -46,8 +53,8 @@ public class SongPlayer {
             audioInputStream = AudioSystem.getAudioInputStream(url);
             clip = AudioSystem.getClip();
             clip.open(audioInputStream);
-            if (clipTime != 0) {
-                clip.setMicrosecondPosition(clipTime);
+            if (getClipTime() != 0) {
+                clip.setMicrosecondPosition(getClipTime());
             }
             clip.start();
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
@@ -56,22 +63,22 @@ public class SongPlayer {
     }
 
     public void stop() {
-        if (clipStatus) {
-            clip.stop();
-            setClipStatus(false);
-        } else {
+        if (!clipStatus) {
             setClipStatus(true);
             play();
+        } else {
+            setClipTime(0);
+            setClipStatus(false);
+            clip.stop();
         }
     }
 
     public void pause() {
         if (!isPauseStatus()) {
-            clipTime = clip.getMicrosecondLength();
             setPauseStatus(true);
+            setClipTime(clip.getMicrosecondPosition());
             clip.stop();
         } else {
-            clip.setMicrosecondPosition(clipTime);
             play();
             setPauseStatus(false);
         }

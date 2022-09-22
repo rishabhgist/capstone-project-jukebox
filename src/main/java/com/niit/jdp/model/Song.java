@@ -16,6 +16,15 @@ public class Song {
     public Song() {
     }
 
+    public Song(String name, String genre, double length, String artist, String album, String path) {
+        this.name = name;
+        this.genre = genre;
+        this.length = length;
+        this.artist = artist;
+        this.album = album;
+        this.path = path;
+    }
+
     public Song(int id, String name, String genre, double length, String artist, String album, String path) {
         this.id = id;
         this.name = name;

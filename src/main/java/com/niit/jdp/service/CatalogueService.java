@@ -1,5 +1,6 @@
 package com.niit.jdp.service;
 
+import com.niit.jdp.exception.InsertErrorException;
 import com.niit.jdp.model.Playlist;
 import com.niit.jdp.model.Song;
 import com.niit.jdp.repository.PlaylistRepository;
@@ -26,7 +27,7 @@ public class CatalogueService {
         songList = new ArrayList<>();
     }
 
-    public void printDefault() {
+    public void printDefault() throws InsertErrorException {
         Scanner input = new Scanner(System.in);
         int choice;
         displayHeader();
@@ -53,7 +54,7 @@ public class CatalogueService {
         } while (choice != 0);
     }
 
-    public void songCatalogue() {
+    public void songCatalogue() throws InsertErrorException {
         Scanner input = new Scanner(System.in);
         int choice;
         do {
@@ -67,10 +68,19 @@ public class CatalogueService {
                     songList.forEach(val -> System.out.format(songFormat, val.getId(), val.getName(), val.getArtist(), val.getGenre(), val.getLength(), val.getAlbum() + "\n"));
                     System.out.println("Enter the song id you want to play");
                     int songToPlay = input.nextInt();
-                    songList.forEach(song1 -> {
-                        if (song1.getId() == songToPlay) playSong(song1);
-                        else System.err.println("Invalid Option");
-                    });
+                    for (Song song1 : songList) {
+                        if (song1.getId() == songToPlay) {
+                            try {
+                                playSong(song1);
+                            } catch (InsertErrorException e) {
+                                System.err.println("Unable to find song");
+                            }
+                        } else System.err.println("Invalid Option");
+                    }
+                }
+                case 2 -> {
+                    if (getInputFromUserAndAdd()) System.out.println("Song Added Successfully");
+                    else System.err.println("Song was not added");
                 }
                 case 4 -> {
                     System.out.println("Enter song name to find");
@@ -92,7 +102,7 @@ public class CatalogueService {
         } while (choice != 0);
     }
 
-    public void playSong(Song song) {
+    public void playSong(Song song) throws InsertErrorException {
         System.out.println(song.getPath());
         songCatalogue();
     }
@@ -106,5 +116,31 @@ public class CatalogueService {
         System.out.println("===============================================================================");
         System.out.println("||                               The Jukebox                                 ||");
         System.out.println("===============================================================================");
+    }
+
+    public boolean getInputFromUserAndAdd() {
+        Scanner input = new Scanner(System.in);
+        try {
+            System.out.println("Enter Song name");
+            String name = input.nextLine();
+            System.out.println("Enter Genre");
+            String genre = input.nextLine();
+            System.out.println("Enter Artist");
+            String artist = input.nextLine();
+            System.out.println("Enter Length");
+            double length = input.nextDouble();
+            System.out.println("Enter Album Name");
+            String album = input.nextLine();
+            System.out.println("Enter Url");
+            String url = input.nextLine();
+            return songRepository.add(databaseService.getConnection(), new Song(name, genre, length, artist, album, url));
+        } catch (SQLException | NumberFormatException ex) {
+            try {
+                throw new InsertErrorException("Unable to Add" + ex.getMessage());
+            } catch (InsertErrorException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        return false;
     }
 }

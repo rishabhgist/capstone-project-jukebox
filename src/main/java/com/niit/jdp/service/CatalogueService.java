@@ -61,7 +61,7 @@ public class CatalogueService {
         } while (choice != 0);
     }
 
-    public void songCatalogue() throws SQLException {
+    public void songCatalogue() throws SQLException, InsertErrorException {
         int choice;
         do {
             System.out.println("\nPlease select from below options or enter 0 to go back");
@@ -143,7 +143,7 @@ public class CatalogueService {
         System.out.println("=============================================================================");
     }
 
-    public boolean getInputFromUserAndAdd() {
+    public boolean getInputFromUserAndAdd() throws InsertErrorException {
         try {
             System.out.println("Enter Song name");
             String name = input.nextLine();
@@ -159,13 +159,8 @@ public class CatalogueService {
             String url = input.nextLine();
             return songRepository.add(databaseService.getConnection(), new Song(name, genre, length, artist, album, url));
         } catch (SQLException | NumberFormatException ex) {
-            try {
-                throw new InsertErrorException("Unable to Add" + ex.getMessage());
-            } catch (InsertErrorException e) {
-                System.out.println(e.getMessage());
-            }
+            throw new InsertErrorException("Unable to add" + ex.getMessage());
         }
-        return false;
     }
 
     public boolean createPlaylist() throws InsertErrorException {

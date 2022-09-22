@@ -68,17 +68,22 @@ public class PlaylistRepository implements Repository<Playlist> {
      * @return A boolean value.
      */
     @Override
+    // This function adds a new object to the database
     public boolean add(Connection connection, Playlist playlist) throws InsertErrorException {
-        Map<Song, Integer> collect = playlist.getSongList().stream().collect(Collectors.toMap(Function.identity(), Song::getId));
-        String listToStr = collect.values().toString().replaceAll("\\[", "").replaceAll("]", "").replace(" ", "");
-        String insertQuery = "insert into `jukebox`.`playlist` (`playlist_name`, `playlist_data`) VALUES (?, ?)";
-        int numberOfRowsAffected;
-        try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
-            preparedStatement.setString(1, playlist.getName());
-            preparedStatement.setString(2, listToStr);
-            numberOfRowsAffected = preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            throw new InsertErrorException(e.getMessage());
+        int numberOfRowsAffected = 0;
+        if (playlist != null) {
+            Map<Song, Integer> collect = playlist.getSongList().stream().collect(Collectors.toMap(Function.identity(), Song::getId));
+            String listToStr = collect.values().toString().replaceAll("\\[", "").replaceAll("]", "").replace(" ", "");
+            String insertQuery = "insert into `jukebox`.`playlist` (`playlist_name`, `playlist_data`) VALUES (?, ?)";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
+                preparedStatement.setString(1, playlist.getName());
+                preparedStatement.setString(2, listToStr);
+                numberOfRowsAffected = preparedStatement.executeUpdate();
+            } catch (SQLException e) {
+                throw new InsertErrorException("Incorrect playlist data");
+            }
+        } else {
+            throw new InsertErrorException("Incorrect Playlist Data");
         }
         return numberOfRowsAffected > 0;
     }

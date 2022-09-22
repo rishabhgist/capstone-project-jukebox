@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added, add and delete method logic in SongRepository">
+    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added songCatalogue method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/CatalogueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/CatalogueService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -457,7 +455,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663822057831</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="added songCatalogue method">
+      <created>1663824577392</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1663824577392</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -487,7 +492,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added capstone_project_jukebox.sql file to store sql quiries" />
     <MESSAGE value="added capstone_project_jukebox.sql file to store sql queries" />
     <MESSAGE value="added query to create and use database" />
     <MESSAGE value="added query to create table song with columns &amp;&amp; create table playlist with columns" />
@@ -512,7 +516,8 @@
     <MESSAGE value="added junit in pom.xml and created DatabaseServiceTest class" />
     <MESSAGE value="added test case for DatabaseServiceTest" />
     <MESSAGE value="added, add and delete method logic in SongRepository" />
-    <option name="LAST_COMMIT_MESSAGE" value="added, add and delete method logic in SongRepository" />
+    <MESSAGE value="added songCatalogue method" />
+    <option name="LAST_COMMIT_MESSAGE" value="added songCatalogue method" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

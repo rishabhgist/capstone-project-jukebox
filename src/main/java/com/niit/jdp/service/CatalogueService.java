@@ -5,7 +5,6 @@ import com.niit.jdp.model.Song;
 import com.niit.jdp.repository.PlaylistRepository;
 import com.niit.jdp.repository.SongRepository;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,9 +38,7 @@ public class CatalogueService {
             String playlistFormat = "%-10s %-15s %-1s";
 
             switch (choice) {
-                case 1 -> {
-                    songCatalogue(databaseService.getConnection());
-                }
+                case 1 -> songCatalogue();
                 case 2 -> {
                     List<Playlist> playlistLists = playlistRepository.displayAll(databaseService.getConnection());
                     System.out.format(playlistFormat, "Sr. No", "Playlist Name", "Total Songs\n");
@@ -56,7 +53,7 @@ public class CatalogueService {
         } while (choice != 0);
     }
 
-    public void songCatalogue(Connection connection) {
+    public void songCatalogue() {
         Scanner input = new Scanner(System.in);
         int choice;
         do {
@@ -67,14 +64,19 @@ public class CatalogueService {
             switch (choice) {
                 case 1 -> {
                     System.out.format(songFormat, "Sr No.", "Song Title", "Artist", "Genre", "Duration", "Album\n");
-                    for (Song val : songList) {
-                        System.out.format(songFormat, val.getId(), val.getName(), val.getArtist(), val.getGenre(), val.getLength(), val.getAlbum() + "\n");
-                    }
+                    songList.forEach(val -> System.out.format(songFormat, val.getId(), val.getName(), val.getArtist(), val.getGenre(), val.getLength(), val.getAlbum() + "\n"));
+                    System.out.println("Enter the song id you want to play");
+                    int songToPlay = input.nextInt();
+                    songList.forEach(song1 -> {
+                        if (song1.getId() == songToPlay) playSong(song1);
+                        else System.err.println("Invalid Option");
+                    });
                 }
                 case 4 -> {
                     System.out.println("Enter song name to find");
                     System.out.format(songFormat, "Sr No.", "Song Title", "Artist", "Genre", "Duration", "Album" + "\n");
-                    song = songRepository.displayByName(databaseService.getConnection(), "Night");
+                    String findName = input.nextLine();
+                    song = songRepository.displayByName(databaseService.getConnection(), findName);
                     System.out.format(songFormat, song.getId(), song.getName(), song.getArtist(), song.getGenre(), song.getLength(), song.getAlbum() + "\n");
                 }
                 case 5 -> {
@@ -84,13 +86,15 @@ public class CatalogueService {
                         System.out.format(songFormat, val.getId(), val.getName(), val.getArtist(), val.getGenre(), val.getLength(), val.getAlbum() + "\n");
                     }
                 }
+                default -> System.err.println("Invalid Choice");
             }
 
         } while (choice != 0);
     }
 
     public void playSong(Song song) {
-        System.out.println();
+        System.out.println(song.getPath());
+        songCatalogue();
     }
 
 

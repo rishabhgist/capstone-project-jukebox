@@ -3,6 +3,7 @@ package com.niit.jdp.repository;
 import com.niit.jdp.exception.InsertErrorException;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
 public interface Repository<T> {
@@ -16,22 +17,13 @@ public interface Repository<T> {
     List<T> displayAll(Connection connection);
 
     /**
-     * Given a connection to a database, return the object with the given id.
-     *
-     * @param connection The connection to the database.
-     * @param name       The name of the song you want to get.
-     * @return A single row from the table.
-     */
-    T displayByName(Connection connection, String name);
-
-    /**
      * This function adds a new object to the database
      *
      * @param connection The connection to the database.
      * @param t          The object to be added to the database.
      * @return A boolean value.
      */
-    boolean add(Connection connection, T t) throws InsertErrorException;
+    boolean add(Connection connection, T t) throws InsertErrorException, SQLException;
 
 
     /**
@@ -41,7 +33,7 @@ public interface Repository<T> {
      * @param id         The id of the record to delete.
      * @return A boolean value.
      */
-    boolean delete(Connection connection, int id);
+    boolean delete(Connection connection, int id) throws SQLException;
 
     /**
      * Sort a list of objects by alphabetical order.

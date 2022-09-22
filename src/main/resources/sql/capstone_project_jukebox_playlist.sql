@@ -12,3 +12,6 @@ insert into `jukebox`.`playist` (`playlist_id`, `playlist_name`, `playlist_data`
 
 -- select all from playlist
 select * from `jukebox`.`playlist`;
+
+-- delete playlist from table
+DELETE FROM `jukebox`.`playlist` WHERE(`playlist_id` = ?)

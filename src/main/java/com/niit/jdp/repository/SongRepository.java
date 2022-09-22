@@ -50,7 +50,6 @@ public class SongRepository implements Repository<Song> {
      * @param name       The name of the song you want to get.
      * @return A single row from the table.
      */
-    @Override
     public Song displayByName(Connection connection, String name) {
         String query = "SELECT * FROM `jukebox`.`song` WHERE(`song_name` LIKE ?)";
         try (PreparedStatement readValues = connection.prepareStatement(query)) {
@@ -83,8 +82,20 @@ public class SongRepository implements Repository<Song> {
      * @return A boolean value.
      */
     @Override
-    public boolean add(Connection connection, Song song) {
-        return false;
+    public boolean add(Connection connection, Song song) throws SQLException {
+        String addQuery = "insert into `jukebox`.`song` (`song_id`, `song_name`, `song_genre`, `song_artist`, `song_length`, `song_album`, `song_url`) " + "VALUES (?, ?, ?, ?, ?, ?, ?)";
+        int noOfRowsAffected;
+        try (PreparedStatement preparedStatement = connection.prepareStatement(addQuery)) {
+            preparedStatement.setInt(1, song.getId());
+            preparedStatement.setString(2, song.getName());
+            preparedStatement.setString(3, song.getGenre());
+            preparedStatement.setString(4, song.getArtist());
+            preparedStatement.setDouble(5, song.getLength());
+            preparedStatement.setString(6, song.getAlbum());
+            preparedStatement.setString(7, song.getPath());
+            noOfRowsAffected = preparedStatement.executeUpdate();
+        }
+        return noOfRowsAffected > 0;
     }
 
     /**
@@ -95,8 +106,14 @@ public class SongRepository implements Repository<Song> {
      * @return A boolean value.
      */
     @Override
-    public boolean delete(Connection connection, int id) {
-        return false;
+    public boolean delete(Connection connection, int id) throws SQLException {
+        String deleteQuery = "DELETE FROM `jukebox`.`song` WHERE(`song_id` = ?)";
+        int noOfRowsAffected;
+        try (PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery)) {
+            preparedStatement.setInt(1, id);
+            noOfRowsAffected = preparedStatement.executeUpdate();
+        }
+        return noOfRowsAffected > 0;
     }
 
     /**

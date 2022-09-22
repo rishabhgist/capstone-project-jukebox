@@ -58,16 +58,6 @@ public class PlaylistRepository implements Repository<Playlist> {
     }
 
     /**
-     * @param connection The connection to the database.
-     * @param name       The name of the playlist
-     * @return Playlist object
-     */
-    @Override
-    public Playlist displayByName(Connection connection, String name) {
-        return null;
-    }
-
-    /**
      * This function adds a new object to the database
      *
      * @param connection The connection to the database.
@@ -99,8 +89,14 @@ public class PlaylistRepository implements Repository<Playlist> {
      * @return A boolean value.
      */
     @Override
-    public boolean delete(Connection connection, int id) {
-        return false;
+    public boolean delete(Connection connection, int id) throws SQLException {
+        String deleteQuery = "DELETE FROM `jukebox`.`playlist` WHERE(`playlist_id` = ?)";
+        int noOfRowsAffected;
+        try (PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery)) {
+            preparedStatement.setInt(1, id);
+            noOfRowsAffected = preparedStatement.executeUpdate();
+        }
+        return noOfRowsAffected > 0;
     }
 
     /**
@@ -112,9 +108,5 @@ public class PlaylistRepository implements Repository<Playlist> {
     @Override
     public List<Playlist> sortByAlphabet(List<Playlist> playlists) {
         return playlists.stream().sorted((name1, name2) -> String.CASE_INSENSITIVE_ORDER.compare(name1.getName(), name2.getName())).toList();
-    }
-
-    public boolean editPlaylistName(Connection connection, String newPlaylistName, int playlistId) {
-        return false;
     }
 }

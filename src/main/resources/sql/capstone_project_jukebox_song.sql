@@ -22,4 +22,7 @@ select * from `jukebox`.`song`;
 -- display song by ID
 select * from `jukebox`.`song` where(`song_id` = ?);
 
+-- delete song by id
+DELETE FROM `jukebox`.`song` WHERE(`song_id` = ?)
+
 

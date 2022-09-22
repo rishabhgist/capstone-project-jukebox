@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added givenCorrectIdDeleteSuccessFull">
+    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added exception with songCatalogue">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/songs/all-our-dreams-8894.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/songs/broke-me-115146.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/songs/cheating-15095.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/CatalogueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/CatalogueService.java" afterDir="false" />
     </list>
@@ -188,13 +191,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663664159317</updated>
-    </task>
-    <task id="LOCAL-00015" summary="added displayAll and displayById method in PlaylistRepository class">
-      <created>1663666591887</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1663666591887</updated>
     </task>
     <task id="LOCAL-00016" summary="added create playlist method editPlaylistName method">
       <created>1663666863642</created>
@@ -532,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663875252064</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="added exception with songCatalogue">
+      <created>1663875577734</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1663875577734</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -562,7 +565,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added Repository implementation for Song and Playlist" />
     <MESSAGE value="added logic in sortByAlphabet and displayByName" />
     <MESSAGE value="added logic to add playlist" />
     <MESSAGE value="added logic to add playlist and display playlist" />
@@ -587,7 +589,8 @@
     <MESSAGE value="fixed numberOfRowsAffected redundant variable" />
     <MESSAGE value="fixed DatabaseServiceTest method givenIncorrectValueTestConnectionFail" />
     <MESSAGE value="added givenCorrectIdDeleteSuccessFull" />
-    <option name="LAST_COMMIT_MESSAGE" value="added givenCorrectIdDeleteSuccessFull" />
+    <MESSAGE value="added exception with songCatalogue" />
+    <option name="LAST_COMMIT_MESSAGE" value="added exception with songCatalogue" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

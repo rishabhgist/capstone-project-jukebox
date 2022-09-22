@@ -65,7 +65,7 @@ public class CatalogueService {
         int choice;
         do {
             System.out.println("\nPlease select from below options or enter 0 to go back");
-            System.out.println("1.View All Songs\n2.Add Song\n3.Delete Song\n4.Find song by name\n0.Exit");
+            System.out.println("1.View All Songs\n2.Add Song\n3.Delete Song\n4.Find song by name\n5.Sort song name by Alphabet\n0.Exit");
             choice = input.nextInt();
             switch (choice) {
                 case 1 -> songDisplayFormat(songList);
@@ -90,7 +90,7 @@ public class CatalogueService {
                     List<Song> sortedSong = songRepository.sortByAlphabet(songList);
                     songDisplayFormat(sortedSong);
                 }
-                case 0 -> System.out.println();
+                case 0 -> songList = null;
                 default -> System.err.println("Invalid Choice");
             }
 
@@ -131,7 +131,7 @@ public class CatalogueService {
                 if (!songPlayer.isClipStatus()) {
                     songPlayer.stop();
                 }
-                playerControl();
+                playerControls();
             }
         }
 
@@ -146,17 +146,18 @@ public class CatalogueService {
     public boolean getInputFromUserAndAdd() throws InsertErrorException {
         try {
             System.out.println("Enter Song name");
-            String name = input.nextLine();
+            String name = input.next();
             System.out.println("Enter Genre");
-            String genre = input.nextLine();
+            String genre = input.next();
             System.out.println("Enter Artist");
-            String artist = input.nextLine();
+            String artist = input.next();
             System.out.println("Enter Length");
+            input.next();
             double length = input.nextDouble();
             System.out.println("Enter Album Name");
-            String album = input.nextLine();
+            String album = input.next();
             System.out.println("Enter Url");
-            String url = input.nextLine();
+            String url = input.next();
             return songRepository.add(databaseService.getConnection(), new Song(name, genre, length, artist, album, url));
         } catch (SQLException | NumberFormatException ex) {
             throw new InsertErrorException("Unable to add" + ex.getMessage());
@@ -186,7 +187,7 @@ public class CatalogueService {
         return playlistRepository.add(databaseService.getConnection(), playlist);
     }
 
-    public void playerControl() {
+    public void playerControls() {
         int choice;
         do {
             String status = "Pause";

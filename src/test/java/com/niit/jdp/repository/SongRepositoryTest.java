@@ -45,6 +45,7 @@ class SongRepositoryTest {
     }
 
     @Test
-    void givenIncorrectIdDeleteFails() {
+    void givenIncorrectIdDeleteFails() throws SQLException {
+        Assertions.assertFalse(songRepository.delete(databaseService.getConnection(), 0));
     }
 }

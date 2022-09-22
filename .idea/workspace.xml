@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added SongRepositoryTest class and initialized objects">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" afterDir="false" />
+    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added givenCorrectNameSuccessful and givenIncorrectNameFailed">
       <change beforePath="$PROJECT_DIR$/src/test/java/com/niit/jdp/repository/SongRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/niit/jdp/repository/SongRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +87,7 @@
       <command value="c" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SongRepositoryTest.givenIncorrectNameFailed">
+  <component name="RunManager" selected="JUnit.SongRepositoryTest.givenIncorrectIdDeleteFails">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.niit.jdp.Main" />
       <module name="capstone-project-jukebox" />
@@ -135,6 +133,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SongRepositoryTest.givenIncorrectIdDeleteFails" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="capstone-project-jukebox" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niit.jdp.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.niit.jdp.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.niit.jdp.repository.SongRepositoryTest" />
+      <option name="METHOD_NAME" value="givenIncorrectIdDeleteFails" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SongRepositoryTest.givenIncorrectNameFailed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="capstone-project-jukebox" />
       <extension name="coverage">
@@ -151,20 +165,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scratch (1)" type="Java Scratch" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Scratch" />
-      <option name="SCRATCH_FILE_URL" value="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_3.java" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SongRepositoryTest.givenIncorrectIdDeleteFails" />
         <item itemvalue="JUnit.SongRepositoryTest.givenIncorrectNameFailed" />
         <item itemvalue="JUnit.SongRepositoryTest.givenCorrectNameSuccessful" />
         <item itemvalue="JUnit.PlaylistRepositoryTest.givenIncorrectIdDeletionFail" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Java Scratch.Scratch (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -176,13 +183,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663664159317</updated>
-    </task>
-    <task id="LOCAL-00009" summary="added fields to DatabaseService, added connect method">
-      <created>1663665356084</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1663665356084</updated>
     </task>
     <task id="LOCAL-00010" summary="added fields to DatabaseService, added connect method">
       <created>1663665460923</created>
@@ -520,7 +520,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663871031725</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="added givenCorrectNameSuccessful and givenIncorrectNameFailed">
+      <created>1663872308524</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1663872308524</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -550,7 +557,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added displayCatalogue method in CatalogueRepository" />
     <MESSAGE value="added printCatalogue method in catalogue" />
     <MESSAGE value="added logic to printCatalogue" />
     <MESSAGE value="added print default logic and addedHeader" />
@@ -575,7 +581,8 @@
     <MESSAGE value="fixed displayAll in PlaylistRepository" />
     <MESSAGE value="added PlaylistRepositoryTest class and givenIncorrectIdDeletionFail" />
     <MESSAGE value="added SongRepositoryTest class and initialized objects" />
-    <option name="LAST_COMMIT_MESSAGE" value="added SongRepositoryTest class and initialized objects" />
+    <MESSAGE value="added givenCorrectNameSuccessful and givenIncorrectNameFailed" />
+    <option name="LAST_COMMIT_MESSAGE" value="added givenCorrectNameSuccessful and givenIncorrectNameFailed" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

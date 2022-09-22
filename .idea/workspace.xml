@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="removed complexity and reuses the method">
+    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="fixed issue with songCatalogue">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/b/5babf34b02434545493a4e3c8d45ca106f1f5e26" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Playlist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/CatalogueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/CatalogueService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/utility/SongPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/utility/SongPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,13 +142,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663664159317</updated>
-    </task>
-    <task id="LOCAL-00004" summary="added fields to Song class, added lombok external library">
-      <created>1663664681323</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1663664681323</updated>
     </task>
     <task id="LOCAL-00005" summary="added parameterized and no arguments constructor">
       <created>1663664737557</created>
@@ -484,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663838887980</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="fixed issue with songCatalogue">
+      <created>1663840654319</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1663840654320</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -514,7 +516,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added playSong, findSong and sortByAlphabet in CatalogueRepository" />
     <MESSAGE value="fixed query" />
     <MESSAGE value="fixed missing field in Song" />
     <MESSAGE value="added mysql connector dependency and logic in connect method" />
@@ -539,7 +540,8 @@
     <MESSAGE value="added logic to play and stop" />
     <MESSAGE value="added logic to display playlist and play song" />
     <MESSAGE value="removed complexity and reuses the method" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed complexity and reuses the method" />
+    <MESSAGE value="fixed issue with songCatalogue" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed issue with songCatalogue" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

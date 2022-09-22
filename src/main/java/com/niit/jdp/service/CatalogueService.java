@@ -94,25 +94,27 @@ public class CatalogueService {
         } while (choice != 0);
     }
 
-    public void playlistCatalogue() {
-        String playlistFormat = "%-10s %-15s %-1s";
+    public void playlistCatalogue() throws SQLException {
         List<Playlist> playlistLists = playlistRepository.displayAll(databaseService.getConnection());
-        System.out.format(playlistFormat, "Sr. No", "Playlist Name", "Total Songs\n");
-        for (Playlist playlistList : playlistLists) {
-            System.out.format(playlistFormat, playlistList.getId(), playlistList.getName(), playlistList.getSongList().size() + "\n");
-        }
-        System.out.println("Enter the playlist you want to play");
-        int playlistSelect = input.nextInt();
-        List<Playlist> playlists = playlistRepository.displayAll(databaseService.getConnection());
-        List<Song> songList1 = new ArrayList<>();
-        for (Playlist playlist : playlists) {
-            if (playlist.getId() == playlistSelect) {
-                setTitle(playlist.getName());
-                songList1 = playlist.getSongList();
+        int choice;
+        do {
+            System.out.println("\nPlease select below options or 0 to go back");
+            System.out.println("1.View All Playlist\n2.Add Playlist\n3.Delete Playlist\n0.Go Back");
+            choice = input.nextInt();
+            switch (choice) {
+                case 1 -> playlistDisplayFormat(playlistLists);
+                case 2 -> createPlaylist();
+                case 3 -> {
+                    System.out.println("Enter Playlist Id to Delete");
+                    int id = input.nextInt();
+                    if (playlistRepository.delete(databaseService.getConnection(), id)) {
+                        System.out.println("Deleted Successfully");
+                    } else System.err.println("Unable to delete, please check playlist id");
+                }
+                case 0 -> System.out.println();
+                default -> System.err.println("Invalid Option");
             }
-        }
-        displayHeader();
-        songDisplayFormat(songList1);
+        } while (choice != 0);
     }
 
     public void playSong(int songId) {
@@ -159,6 +161,10 @@ public class CatalogueService {
         return false;
     }
 
+    public boolean createPlaylist() {
+        return false;
+    }
+
     public void playerControl() {
         int choice;
         do {
@@ -187,5 +193,26 @@ public class CatalogueService {
         System.out.println("Enter the song id you want to play");
         choice = input.nextInt();
         playSong(choice);
+    }
+
+    public void playlistDisplayFormat(List<Playlist> playlistLists) {
+        String playlistFormat = "%-10s %-15s %-1s";
+        setTitle("Jukebox Playlist");
+        displayHeader();
+        System.out.format(playlistFormat, "Sr. No", "Playlist Name", "Total Songs\n");
+        for (Playlist playlistList : playlistLists) {
+            System.out.format(playlistFormat, playlistList.getId(), playlistList.getName(), playlistList.getSongList().size() + "\n");
+        }
+        System.out.println("Enter the playlist you want to play");
+        int playlistSelect = input.nextInt();
+        List<Song> songList1 = new ArrayList<>();
+        for (Playlist playlist : playlistLists) {
+            if (playlist.getId() == playlistSelect) {
+                setTitle(playlist.getName());
+                songList1 = playlist.getSongList();
+            }
+        }
+        displayHeader();
+        songDisplayFormat(songList1);
     }
 }

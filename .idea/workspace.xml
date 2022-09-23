@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added exception with songCatalogue">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/songs/all-our-dreams-8894.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/songs/broke-me-115146.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/songs/cheating-15095.wav" afterDir="false" />
+    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added givenCorrectFileCheckPlayerStatus and givenIncorrectFilePathPlayerStatus method to SongPlayerTest">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sql/Dump20220923.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/niit/jdp/utility/SongPlayerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/lie-2-you-ft-dylan-emmet.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/CatalogueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/CatalogueService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/utility/SongPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/utility/SongPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +51,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Downloaded.Files.Path.Enabled": "false",
     "OverrideImplement.generate.javadoc": "true",
@@ -62,7 +65,7 @@
     "ToolWindowRun.ShowToolbar": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "C:/Users/Rishabh/IdeaProjects/capstone-project-jukebox/src/main/resources/songs",
+    "last_opened_file_path": "C:/Users/Rishabh/IdeaProjects/capstone-project-jukebox/src/test/resources",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -76,6 +79,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Rishabh\IdeaProjects\capstone-project-jukebox\src\test\resources" />
       <recent name="C:\Users\Rishabh\IdeaProjects\capstone-project-jukebox\src\main\resources\songs" />
       <recent name="C:\Users\Rishabh\IdeaProjects\capstone-project-jukebox\src\main\resources" />
       <recent name="C:\Users\Rishabh\IdeaProjects\capstone-project-jukebox\src\main\resources\libraries" />
@@ -87,6 +91,7 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.niit.jdp.utility" />
       <recent name="com.niit.jdp.repository" />
       <recent name="com.niit.jdp.service" />
     </key>
@@ -96,7 +101,7 @@
       <command value="c" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.SongPlayerTest.givenIncorrectFilePath">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.niit.jdp.Main" />
       <module name="capstone-project-jukebox" />
@@ -142,32 +147,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlaylistRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SongPlayerTest.givenCorrectFileCheckPlayerStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="capstone-project-jukebox" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.niit.jdp.repository.*" />
+          <option name="PATTERN" value="com.niit.jdp.utility.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.niit.jdp.repository" />
-      <option name="MAIN_CLASS_NAME" value="com.niit.jdp.repository.PlaylistRepositoryTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="com.niit.jdp.utility" />
+      <option name="MAIN_CLASS_NAME" value="com.niit.jdp.utility.SongPlayerTest" />
+      <option name="METHOD_NAME" value="givenCorrectFileCheckPlayerStatus" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlaylistRepositoryTest.givenNullPlaylistAddFails" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SongPlayerTest.givenIncorrectFilePath" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="capstone-project-jukebox" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.niit.jdp.repository.*" />
+          <option name="PATTERN" value="com.niit.jdp.utility.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.niit.jdp.repository" />
-      <option name="MAIN_CLASS_NAME" value="com.niit.jdp.repository.PlaylistRepositoryTest" />
-      <option name="METHOD_NAME" value="givenNullPlaylistAddFails" />
+      <option name="PACKAGE_NAME" value="com.niit.jdp.utility" />
+      <option name="MAIN_CLASS_NAME" value="com.niit.jdp.utility.SongPlayerTest" />
+      <option name="METHOD_NAME" value="givenIncorrectFilePath" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -175,11 +181,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SongPlayerTest.givenIncorrectFilePath" />
+        <item itemvalue="JUnit.SongPlayerTest.givenCorrectFileCheckPlayerStatus" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.DatabaseServiceTest.givenUrlUsernamePasswordTestConnectionSuccessful" />
         <item itemvalue="JUnit.DatabaseServiceTest.givenIncorrectValueTestConnectionFail" />
-        <item itemvalue="JUnit.PlaylistRepositoryTest.givenNullPlaylistAddFails" />
-        <item itemvalue="JUnit.PlaylistRepositoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -191,13 +197,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663664159317</updated>
-    </task>
-    <task id="LOCAL-00016" summary="added create playlist method editPlaylistName method">
-      <created>1663666863642</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1663666863642</updated>
     </task>
     <task id="LOCAL-00017" summary="added deletePlaylistMethod">
       <created>1663666946737</created>
@@ -535,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663875577734</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="added few more songs and fixed repeated display list in songCatalogue method">
+      <created>1663879707644</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1663879707644</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -565,8 +571,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added logic in sortByAlphabet and displayByName" />
-    <MESSAGE value="added logic to add playlist" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="added logic to add playlist and display playlist" />
     <MESSAGE value="added junit in pom.xml and created DatabaseServiceTest class" />
     <MESSAGE value="added test case for DatabaseServiceTest" />
@@ -590,7 +595,9 @@
     <MESSAGE value="fixed DatabaseServiceTest method givenIncorrectValueTestConnectionFail" />
     <MESSAGE value="added givenCorrectIdDeleteSuccessFull" />
     <MESSAGE value="added exception with songCatalogue" />
-    <option name="LAST_COMMIT_MESSAGE" value="added exception with songCatalogue" />
+    <MESSAGE value="added few more songs and fixed repeated display list in songCatalogue method" />
+    <MESSAGE value="added givenCorrectFileCheckPlayerStatus and givenIncorrectFilePathPlayerStatus method to SongPlayerTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="added givenCorrectFileCheckPlayerStatus and givenIncorrectFilePathPlayerStatus method to SongPlayerTest" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

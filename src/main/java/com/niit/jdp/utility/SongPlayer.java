@@ -57,8 +57,8 @@ public class SongPlayer {
                 clip.setMicrosecondPosition(getClipTime());
             }
             clip.start();
-        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
-            System.err.println(e.getMessage());
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException | NullPointerException e) {
+            throw new RuntimeException(e);
         }
     }
 

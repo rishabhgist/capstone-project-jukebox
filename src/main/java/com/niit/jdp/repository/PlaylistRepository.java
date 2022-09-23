@@ -19,10 +19,13 @@ public class PlaylistRepository implements Repository<Playlist> {
     List<Playlist> playlistList;
 
     SongRepository songRepository;
+    Song song;
 
     public PlaylistRepository() {
         this.playlistList = new ArrayList<>();
         this.songRepository = new SongRepository();
+        playlist = new Playlist();
+        song = new Song();
     }
 
     /**
@@ -43,15 +46,13 @@ public class PlaylistRepository implements Repository<Playlist> {
                 playlist.setId(playlistResult.getInt("playlist_id"));
                 playlist.setName(playlistResult.getString("playlist_name"));
                 List<String> playlistData = List.of(playlistResult.getString("playlist_data").split(","));
-                for (String playlistDatum : playlistData) {
-                    int a = Integer.parseInt(playlistDatum.trim());
-                    for (Song song : songList1) {
-                        if (a == song.getId()) {
-                            songList.add(new Song(song.getId(), song.getName(), song.getGenre(), song.getLength(), song.getArtist(), song.getAlbum(), song.getPath()));
-                        }
-                        playlist.setSongList(songList);
+                for (int i = 0; i < playlistData.size(); i++) {
+                    String playlistDatum = playlistData.get(i);
+                    for (Song songValue : songList1) {
+                        if (Integer.parseInt(playlistDatum.trim()) == songValue.getId()) songList.add(songValue);
                     }
                 }
+                playlist.setSongList(songList);
                 playlistList.add(playlist);
             }
         } catch (SQLException e) {

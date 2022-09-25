@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added exception class PlaylistNotFoundException">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/exception/InsertErrorException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/exception/InsertFailedException.java" afterDir="false" />
+    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="fixed issue with songList duplicate display">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/f/bf6f65185120d5158c3b2f1089d03db6c03b1b2b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/Repository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/CatalogueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/CatalogueService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/niit/jdp/repository/PlaylistRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/niit/jdp/repository/PlaylistRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,13 +194,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663664159317</updated>
-    </task>
-    <task id="LOCAL-00019" summary="added displayAllSong, displaySong, addSongToPlaylist methods">
-      <created>1663668470241</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1663668470241</updated>
     </task>
     <task id="LOCAL-00020" summary="added method to addNewSong and addNewSong">
       <created>1663668593317</created>
@@ -540,7 +531,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664096771668</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="fixed when playlist choice is invalid with PlaylistNotFoundException">
+      <created>1664097203752</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1664097203752</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -571,8 +569,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added test case for DatabaseServiceTest" />
-    <MESSAGE value="added, add and delete method logic in SongRepository" />
     <MESSAGE value="added songCatalogue method" />
     <MESSAGE value="refactored and formatted" />
     <MESSAGE value="added case to addSong in switch" />
@@ -596,7 +592,9 @@
     <MESSAGE value="added givenCorrectFileCheckPlayerStatus and givenIncorrectFilePathPlayerStatus method to SongPlayerTest" />
     <MESSAGE value="added exception SongNotFoundException" />
     <MESSAGE value="added exception class PlaylistNotFoundException" />
-    <option name="LAST_COMMIT_MESSAGE" value="added exception class PlaylistNotFoundException" />
+    <MESSAGE value="fixed when playlist choice is invalid with PlaylistNotFoundException" />
+    <MESSAGE value="fixed issue with songList duplicate display" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed issue with songList duplicate display" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

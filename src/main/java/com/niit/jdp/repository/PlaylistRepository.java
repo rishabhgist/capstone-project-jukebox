@@ -70,9 +70,8 @@ public class PlaylistRepository implements Repository<Playlist> {
      * @return A boolean value.
      */
     @Override
-    // This function adds a new object to the database
     public boolean add(Connection connection, Playlist playlist) throws InsertFailedException {
-        int numberOfRowsAffected;
+        int numberOfRowsAffected = 0;
         if (playlist != null) {
             Map<Song, Integer> collect = playlist.getSongList().stream().collect(Collectors.toMap(Function.identity(), Song::getId));
             String listToStr = collect.values().toString().replaceAll("\\[", "").replaceAll("]", "").replace(" ", "");
@@ -82,7 +81,7 @@ public class PlaylistRepository implements Repository<Playlist> {
                 preparedStatement.setString(2, listToStr);
                 numberOfRowsAffected = preparedStatement.executeUpdate();
             } catch (SQLException e) {
-                throw new InsertFailedException("Incorrect playlist data");
+                System.err.println(e.getMessage());
             }
         } else {
             throw new InsertFailedException("Incorrect Playlist Data");

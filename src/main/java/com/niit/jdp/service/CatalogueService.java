@@ -48,11 +48,11 @@ public class CatalogueService {
         setTitle("The Jukebox");
         displayHeader();
         do {
+            songList = null;
             songList = songRepository.displayAll(databaseService.getConnection());
             System.out.println("\nPlease select from below options or enter 0 to exit");
             System.out.println("1.Song\n2.Playlists\n0.Exit");
             choice = input.nextInt();
-
             switch (choice) {
                 case 1 -> songCatalogue();
                 case 2 -> playlistCatalogue();
@@ -149,19 +149,19 @@ public class CatalogueService {
     public boolean getInputFromUserAndAdd() throws InsertFailedException {
         try {
             System.out.println("Enter Song name");
-            String name = input.next();
+            input.nextLine();
+            String name = input.nextLine();
             System.out.println("Enter Genre");
-            input.next();
-            String genre = input.next();
+            String genre = input.nextLine();
             System.out.println("Enter Artist");
-            String artist = input.next();
+            String artist = input.nextLine();
             System.out.println("Enter Length");
-            input.next();
             double length = input.nextDouble();
             System.out.println("Enter Album Name");
-            String album = input.next();
+            input.nextLine();
+            String album = input.nextLine();
             System.out.println("Enter Url");
-            String url = input.next();
+            String url = input.nextLine();
             return songRepository.add(databaseService.getConnection(), new Song(name, genre, length, artist, album, url));
         } catch (SQLException | NumberFormatException ex) {
             throw new InsertFailedException("Unable to add" + ex.getMessage());

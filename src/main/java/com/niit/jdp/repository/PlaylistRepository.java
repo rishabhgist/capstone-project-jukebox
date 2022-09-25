@@ -37,19 +37,21 @@ public class PlaylistRepository implements Repository<Playlist> {
     @Override
     public List<Playlist> displayAll(Connection connection) {
         String query = "SELECT * FROM `jukebox`.`playlist`";
-        List<Song> songList = new ArrayList<>();
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             ResultSet playlistResult = preparedStatement.executeQuery();
             List<Song> songList1 = songRepository.displayAll(connection);
             while (playlistResult.next()) {
+                List<Song> songList = new ArrayList<>();
                 playlist = new Playlist();
                 playlist.setId(playlistResult.getInt("playlist_id"));
                 playlist.setName(playlistResult.getString("playlist_name"));
                 List<String> playlistData = List.of(playlistResult.getString("playlist_data").split(","));
+                // 1,2,3
                 for (int i = 0; i < playlistData.size(); i++) {
                     String playlistDatum = playlistData.get(i);
                     for (Song songValue : songList1) {
-                        if (Integer.parseInt(playlistDatum.trim()) == songValue.getId()) songList.add(songValue);
+                        if (Integer.parseInt(playlistDatum.trim()) == songValue.getId())
+                            songList.add(songValue);
                     }
                 }
                 playlist.setSongList(songList);

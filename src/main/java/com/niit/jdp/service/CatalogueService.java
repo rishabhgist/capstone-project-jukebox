@@ -109,6 +109,7 @@ public class CatalogueService {
                 case 2 -> {
                     if (createPlaylist()) {
                         System.out.println("Playlist added Successfully");
+
                     } else System.err.println("Unable to add Playlist");
                 }
                 case 3 -> {
@@ -131,6 +132,7 @@ public class CatalogueService {
                 if (!songPlayer.isClipStatus()) {
                     songPlayer.stop();
                 }
+                songPlayer.setClipStatus(true);
                 playerControls();
             }
         }
@@ -148,6 +150,7 @@ public class CatalogueService {
             System.out.println("Enter Song name");
             String name = input.next();
             System.out.println("Enter Genre");
+            input.next();
             String genre = input.next();
             System.out.println("Enter Artist");
             String artist = input.next();

@@ -1,6 +1,6 @@
 package com.niit.jdp.repository;
 
-import com.niit.jdp.exception.InsertErrorException;
+import com.niit.jdp.exception.InsertFailedException;
 import com.niit.jdp.model.Playlist;
 import com.niit.jdp.service.DatabaseService;
 import org.junit.jupiter.api.AfterEach;
@@ -42,6 +42,6 @@ class PlaylistRepositoryTest {
 
     @Test
     void givenNullPlaylistAddFails() {
-        Assertions.assertThrows(InsertErrorException.class, () -> playlistRepository.add(databaseService.getConnection(), playlist));
+        Assertions.assertThrows(InsertFailedException.class, () -> playlistRepository.add(databaseService.getConnection(), playlist));
     }
 }

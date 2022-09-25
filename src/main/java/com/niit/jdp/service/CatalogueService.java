@@ -1,6 +1,7 @@
 package com.niit.jdp.service;
 
-import com.niit.jdp.exception.InsertErrorException;
+import com.niit.jdp.exception.InsertFailedException;
+import com.niit.jdp.exception.PlaylistNotFoundException;
 import com.niit.jdp.model.Playlist;
 import com.niit.jdp.model.Song;
 import com.niit.jdp.repository.PlaylistRepository;
@@ -42,7 +43,7 @@ public class CatalogueService {
         this.title = title;
     }
 
-    public void printDefault() throws SQLException, InsertErrorException {
+    public void printDefault() throws SQLException, InsertFailedException, PlaylistNotFoundException {
         int choice;
         setTitle("The Jukebox");
         displayHeader();
@@ -61,7 +62,7 @@ public class CatalogueService {
         } while (choice != 0);
     }
 
-    public void songCatalogue() throws SQLException, InsertErrorException {
+    public void songCatalogue() throws SQLException, InsertFailedException {
         int choice;
         do {
             System.out.println("\nPlease select from below options or enter 0 to go back");
@@ -97,7 +98,7 @@ public class CatalogueService {
         } while (choice != 0);
     }
 
-    public void playlistCatalogue() throws SQLException, InsertErrorException {
+    public void playlistCatalogue() throws SQLException, InsertFailedException, PlaylistNotFoundException {
         List<Playlist> playlistLists = playlistRepository.displayAll(databaseService.getConnection());
         int choice;
         do {
@@ -145,7 +146,7 @@ public class CatalogueService {
         System.out.println("=============================================================================");
     }
 
-    public boolean getInputFromUserAndAdd() throws InsertErrorException {
+    public boolean getInputFromUserAndAdd() throws InsertFailedException {
         try {
             System.out.println("Enter Song name");
             String name = input.next();
@@ -163,11 +164,11 @@ public class CatalogueService {
             String url = input.next();
             return songRepository.add(databaseService.getConnection(), new Song(name, genre, length, artist, album, url));
         } catch (SQLException | NumberFormatException ex) {
-            throw new InsertErrorException("Unable to add" + ex.getMessage());
+            throw new InsertFailedException("Unable to add" + ex.getMessage());
         }
     }
 
-    public boolean createPlaylist() throws InsertErrorException {
+    public boolean createPlaylist() throws InsertFailedException, PlaylistNotFoundException {
         List<Song> songs = new ArrayList<>();
         String songFormat = "%-7s %-20s %-16s %-10s %-10s %-1s";
         System.out.println("\nSongs List");
@@ -220,7 +221,7 @@ public class CatalogueService {
         playSong(choice);
     }
 
-    public void playlistDisplayFormat(List<Playlist> playlistLists) {
+    public void playlistDisplayFormat(List<Playlist> playlistLists) throws PlaylistNotFoundException {
         String playlistFormat = "%-10s %-15s %-1s";
         setTitle("Jukebox Playlist");
         displayHeader();
@@ -231,12 +232,14 @@ public class CatalogueService {
         System.out.println("Enter the playlist you want to play");
         int playlistSelect = input.nextInt();
         List<Song> songList1 = new ArrayList<>();
-        for (Playlist values : playlistLists) {
-            if (values.getId() == playlistSelect) {
-                setTitle(values.getName());
-                songList1 = values.getSongList();
+        if (playlistSelect <= playlistLists.size()) {
+            for (Playlist values : playlistLists) {
+                if (values.getId() == playlistSelect) {
+                    setTitle(values.getName());
+                    songList1 = values.getSongList();
+                }
             }
-        }
+        } else throw new PlaylistNotFoundException("Playlist not found");
         displayHeader();
         songDisplayFormat(songList1);
     }

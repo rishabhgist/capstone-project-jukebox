@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added givenCorrectFileCheckPlayerStatus and givenIncorrectFilePathPlayerStatus method to SongPlayerTest">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/exception/SongNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/e/1e459867f0c3793430dab6ecb869aa69a85a633f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/e/2e972e9c43469b67c52d4ebb1ef4baf6e570e05a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/1/411558f0bc5ef3bb063b2207228d58f0589e4ae3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/5/e570dc592b6994c8256ea26820292cf6ba8c3d4e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/d/edabe8e0dc5366eb0790ca0232dca645cdbc090d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Playlist.java" afterDir="false" />
+    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="added exception class PlaylistNotFoundException">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/exception/InsertErrorException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/exception/InsertFailedException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/Repository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/CatalogueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/CatalogueService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/niit/jdp/repository/PlaylistRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/niit/jdp/repository/PlaylistRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,13 +196,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663664159317</updated>
-    </task>
-    <task id="LOCAL-00018" summary="added SongRepository class">
-      <created>1663666993825</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1663666993825</updated>
     </task>
     <task id="LOCAL-00019" summary="added displayAllSong, displaySong, addSongToPlaylist methods">
       <created>1663668470241</created>
@@ -545,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663917328938</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="added exception class PlaylistNotFoundException">
+      <created>1664096771668</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1664096771668</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -576,8 +571,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added logic to add playlist and display playlist" />
-    <MESSAGE value="added junit in pom.xml and created DatabaseServiceTest class" />
     <MESSAGE value="added test case for DatabaseServiceTest" />
     <MESSAGE value="added, add and delete method logic in SongRepository" />
     <MESSAGE value="added songCatalogue method" />
@@ -601,7 +594,9 @@
     <MESSAGE value="added exception with songCatalogue" />
     <MESSAGE value="added few more songs and fixed repeated display list in songCatalogue method" />
     <MESSAGE value="added givenCorrectFileCheckPlayerStatus and givenIncorrectFilePathPlayerStatus method to SongPlayerTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="added givenCorrectFileCheckPlayerStatus and givenIncorrectFilePathPlayerStatus method to SongPlayerTest" />
+    <MESSAGE value="added exception SongNotFoundException" />
+    <MESSAGE value="added exception class PlaylistNotFoundException" />
+    <option name="LAST_COMMIT_MESSAGE" value="added exception class PlaylistNotFoundException" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

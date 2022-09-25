@@ -1,6 +1,6 @@
 package com.niit.jdp.repository;
 
-import com.niit.jdp.exception.InsertErrorException;
+import com.niit.jdp.exception.InsertFailedException;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -23,7 +23,7 @@ public interface Repository<T> {
      * @param t          The object to be added to the database.
      * @return A boolean value.
      */
-    boolean add(Connection connection, T t) throws InsertErrorException, SQLException;
+    boolean add(Connection connection, T t) throws InsertFailedException, SQLException;
 
 
     /**

@@ -1,6 +1,6 @@
 package com.niit.jdp.repository;
 
-import com.niit.jdp.exception.InsertErrorException;
+import com.niit.jdp.exception.InsertFailedException;
 import com.niit.jdp.model.Playlist;
 import com.niit.jdp.model.Song;
 
@@ -47,8 +47,7 @@ public class PlaylistRepository implements Repository<Playlist> {
                 playlist.setName(playlistResult.getString("playlist_name"));
                 List<String> playlistData = List.of(playlistResult.getString("playlist_data").split(","));
                 // 1,2,3
-                for (int i = 0; i < playlistData.size(); i++) {
-                    String playlistDatum = playlistData.get(i);
+                for (String playlistDatum : playlistData) {
                     for (Song songValue : songList1) {
                         if (Integer.parseInt(playlistDatum.trim()) == songValue.getId())
                             songList.add(songValue);
@@ -72,7 +71,7 @@ public class PlaylistRepository implements Repository<Playlist> {
      */
     @Override
     // This function adds a new object to the database
-    public boolean add(Connection connection, Playlist playlist) throws InsertErrorException {
+    public boolean add(Connection connection, Playlist playlist) throws InsertFailedException {
         int numberOfRowsAffected;
         if (playlist != null) {
             Map<Song, Integer> collect = playlist.getSongList().stream().collect(Collectors.toMap(Function.identity(), Song::getId));
@@ -83,10 +82,10 @@ public class PlaylistRepository implements Repository<Playlist> {
                 preparedStatement.setString(2, listToStr);
                 numberOfRowsAffected = preparedStatement.executeUpdate();
             } catch (SQLException e) {
-                throw new InsertErrorException("Incorrect playlist data");
+                throw new InsertFailedException("Incorrect playlist data");
             }
         } else {
-            throw new InsertErrorException("Incorrect Playlist Data");
+            throw new InsertFailedException("Incorrect Playlist Data");
         }
         return numberOfRowsAffected > 0;
     }

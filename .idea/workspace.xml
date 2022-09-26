@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="fixed issue with songList duplicate display">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/f/bf6f65185120d5158c3b2f1089d03db6c03b1b2b" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/CatalogueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/CatalogueService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,22 +111,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DatabaseServiceTest.givenIncorrectValueTestConnectionFail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="capstone-project-jukebox" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.niit.jdp.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.niit.jdp.service" />
-      <option name="MAIN_CLASS_NAME" value="com.niit.jdp.service.DatabaseServiceTest" />
-      <option name="METHOD_NAME" value="givenIncorrectValueTestConnectionFail" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DatabaseServiceTest.givenUrlUsernamePasswordTestConnectionSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="capstone-project-jukebox" />
       <extension name="coverage">
@@ -176,13 +159,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SongPlayerTest.givenIncorrectFilePathPlayerStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="capstone-project-jukebox" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niit.jdp.utility.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.niit.jdp.utility" />
+      <option name="MAIN_CLASS_NAME" value="com.niit.jdp.utility.SongPlayerTest" />
+      <option name="METHOD_NAME" value="givenIncorrectFilePathPlayerStatus" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.SongPlayerTest.givenIncorrectFilePathPlayerStatus" />
         <item itemvalue="JUnit.SongPlayerTest.givenIncorrectFilePath" />
         <item itemvalue="JUnit.SongPlayerTest.givenCorrectFileCheckPlayerStatus" />
         <item itemvalue="JUnit.DatabaseServiceTest.givenUrlUsernamePasswordTestConnectionSuccessful" />
-        <item itemvalue="JUnit.DatabaseServiceTest.givenIncorrectValueTestConnectionFail" />
       </list>
     </recent_temporary>
   </component>
@@ -194,13 +193,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663664159317</updated>
-    </task>
-    <task id="LOCAL-00020" summary="added method to addNewSong and addNewSong">
-      <created>1663668593317</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1663668593317</updated>
     </task>
     <task id="LOCAL-00021" summary="added capstone_project_jukebox.sql file to store sql quiries">
       <created>1663668771797</created>
@@ -538,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664097203752</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="fixed issue with songList duplicate display">
+      <created>1664099275405</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1664099275406</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -2,6 +2,7 @@ package com.niit.jdp.service;
 
 import com.niit.jdp.exception.InsertFailedException;
 import com.niit.jdp.exception.PlaylistNotFoundException;
+import com.niit.jdp.exception.SongNotFoundException;
 import com.niit.jdp.model.Playlist;
 import com.niit.jdp.model.Song;
 import com.niit.jdp.repository.PlaylistRepository;
@@ -43,7 +44,7 @@ public class CatalogueService {
         this.title = title;
     }
 
-    public void printDefault() throws SQLException, InsertFailedException, PlaylistNotFoundException {
+    public void printDefault() throws SQLException, InsertFailedException, PlaylistNotFoundException, SongNotFoundException {
         int choice;
         setTitle("The Jukebox");
         displayHeader();
@@ -62,7 +63,7 @@ public class CatalogueService {
         } while (choice != 0);
     }
 
-    public void songCatalogue() throws SQLException, InsertFailedException {
+    public void songCatalogue() throws SQLException, InsertFailedException, SongNotFoundException {
         int choice;
         do {
             System.out.println("\nPlease select from below options or enter 0 to go back");
@@ -98,7 +99,7 @@ public class CatalogueService {
         } while (choice != 0);
     }
 
-    public void playlistCatalogue() throws SQLException, InsertFailedException, PlaylistNotFoundException {
+    public void playlistCatalogue() throws SQLException, InsertFailedException, PlaylistNotFoundException, SongNotFoundException {
         List<Playlist> playlistLists = playlistRepository.displayAll(databaseService.getConnection());
         int choice;
         do {
@@ -126,7 +127,7 @@ public class CatalogueService {
         } while (choice != 0);
     }
 
-    public void playSong(int songId) {
+    public void playSong(int songId) throws SongNotFoundException {
         for (Song songObj : songList) {
             if (songObj.getId() == songId) {
                 songPlayer.setFilePath(songObj.getPath());
@@ -135,6 +136,8 @@ public class CatalogueService {
                 }
                 songPlayer.setClipStatus(true);
                 playerControls();
+            } else {
+                throw new SongNotFoundException("Invalid Song Id");
             }
         }
 
@@ -168,7 +171,7 @@ public class CatalogueService {
         }
     }
 
-    public boolean createPlaylist() throws InsertFailedException, PlaylistNotFoundException {
+    public boolean createPlaylist() throws InsertFailedException, PlaylistNotFoundException, SongNotFoundException {
         List<Song> songs = new ArrayList<>();
         String songFormat = "%-7s %-20s %-16s %-10s %-10s %-1s";
         System.out.println("\nSongs List");
@@ -183,6 +186,8 @@ public class CatalogueService {
             for (Song val : songList) {
                 if (val.getId() == choice) {
                     songs.add(val);
+                } else {
+                    System.err.println("Invalid song Id");
                 }
             }
         } while (choice != 0);
@@ -210,7 +215,7 @@ public class CatalogueService {
         } while (choice != 2);
     }
 
-    public void songDisplayFormat(List<Song> songList) {
+    public void songDisplayFormat(List<Song> songList) throws SongNotFoundException {
         int choice;
         System.out.println("\n\nPlease select from below options or enter 0 to go back");
         String songFormat = "%-7s %-20s %-16s %-10s %-10s %-1s";
@@ -221,7 +226,7 @@ public class CatalogueService {
         playSong(choice);
     }
 
-    public void playlistDisplayFormat(List<Playlist> playlistLists) throws PlaylistNotFoundException {
+    public void playlistDisplayFormat(List<Playlist> playlistLists) throws PlaylistNotFoundException, SongNotFoundException {
         String playlistFormat = "%-10s %-15s %-1s";
         setTitle("Jukebox Playlist");
         displayHeader();

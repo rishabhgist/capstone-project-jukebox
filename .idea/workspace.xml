@@ -4,10 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="fixed issue with songList duplicate display">
+    <list default="true" id="8c916ea4-1b5a-488c-a639-196d31e8f6ab" name="Changes" comment="fixed playlist not adding correct song and added SongNotFoundException">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/CatalogueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/CatalogueService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/songs/all-our-dreams-8894.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/songs/broke-me-115146.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/songs/cheating-15095.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/songs/happy-travel.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/songs/lie-2-you-ft-dylan-emmet.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/songs/night-sky-ft-julia-mihevc.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/songs/salangseuleoun.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/songs/town.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/songs/trendy-summer.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/songs/tropical-summer.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/songs/whip.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/lie-2-you-ft-dylan-emmet.wav" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +74,7 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Rishabh/IdeaProjects/capstone-project-jukebox/src/test/resources&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
@@ -97,7 +109,7 @@
       <command value="c" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Java Scratch.Scratch">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.niit.jdp.Main" />
       <module name="capstone-project-jukebox" />
@@ -107,22 +119,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DatabaseServiceTest.givenUrlUsernamePasswordTestConnectionSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="capstone-project-jukebox" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.niit.jdp.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.niit.jdp.service" />
-      <option name="MAIN_CLASS_NAME" value="com.niit.jdp.service.DatabaseServiceTest" />
-      <option name="METHOD_NAME" value="givenUrlUsernamePasswordTestConnectionSuccessful" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -175,13 +171,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Scratch" type="Java Scratch" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Scratch" />
+      <option name="SCRATCH_FILE_URL" value="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Java Scratch.Scratch" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.SongPlayerTest.givenIncorrectFilePathPlayerStatus" />
         <item itemvalue="JUnit.SongPlayerTest.givenIncorrectFilePath" />
         <item itemvalue="JUnit.SongPlayerTest.givenCorrectFileCheckPlayerStatus" />
-        <item itemvalue="JUnit.DatabaseServiceTest.givenUrlUsernamePasswordTestConnectionSuccessful" />
       </list>
     </recent_temporary>
   </component>
@@ -193,13 +196,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663664159317</updated>
-    </task>
-    <task id="LOCAL-00021" summary="added capstone_project_jukebox.sql file to store sql quiries">
-      <created>1663668771797</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1663668771797</updated>
     </task>
     <task id="LOCAL-00022" summary="added capstone_project_jukebox.sql file to store sql queries">
       <created>1663668785172</created>
@@ -537,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664099275406</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="fixed playlist not adding correct song and added SongNotFoundException">
+      <created>1664176101310</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1664176101311</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -568,7 +571,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added songCatalogue method" />
     <MESSAGE value="refactored and formatted" />
     <MESSAGE value="added case to addSong in switch" />
     <MESSAGE value="added case 3 in switch to delete song" />
@@ -593,7 +595,8 @@
     <MESSAGE value="added exception class PlaylistNotFoundException" />
     <MESSAGE value="fixed when playlist choice is invalid with PlaylistNotFoundException" />
     <MESSAGE value="fixed issue with songList duplicate display" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed issue with songList duplicate display" />
+    <MESSAGE value="fixed playlist not adding correct song and added SongNotFoundException" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed playlist not adding correct song and added SongNotFoundException" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
